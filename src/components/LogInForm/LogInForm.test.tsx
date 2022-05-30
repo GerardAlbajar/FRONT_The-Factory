@@ -8,5 +8,11 @@ describe("Given the LogInForm component", () => {
 
       expect(screen.getAllByText("Username")).toHaveLength(1);
     });
+
+    test("Then it should render one 'Password' label", () => {
+      render(<Login />);
+
+      expect(screen.getAllByText("Password")).toHaveLength(1);
+    });
   });
 });
