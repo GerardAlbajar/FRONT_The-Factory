@@ -14,5 +14,11 @@ describe("Given the LogInForm component", () => {
 
       expect(screen.getAllByText("Password")).toHaveLength(1);
     });
+
+    test("Then it should render a button", () => {
+      render(<Login />);
+
+      expect(screen.getByRole("button")).toBeInTheDocument();
+    });
   });
 });
