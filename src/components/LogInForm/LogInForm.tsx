@@ -1,17 +1,15 @@
 import { useState } from "react";
 import LogInFormStyled from "./LogInFormStyled";
 
-const LogInForm = () => {
+const LogInForm = (): JSX.Element => {
   const formInitialState = { username: "", password: "" };
 
   const [formData, setFormData] = useState(formInitialState);
 
-  const changeData = (event: React.FormEvent<HTMLInputElement>) => {
+  const changeData = (event: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
-      [(event.target as HTMLInputElement).id]: (
-        event.target as HTMLInputElement
-      ).value,
+      [event.target.id]: event.target.value,
     });
   };
 
