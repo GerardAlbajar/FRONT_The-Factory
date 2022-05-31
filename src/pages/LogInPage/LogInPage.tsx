@@ -1,8 +1,9 @@
-import HomePageStyled from "./HomePageStyled";
+import LogInForm from "../../components/LogInForm/LogInForm";
+import LogInPageStyled from "./LogInPageStyled";
 
-const HomePage = (): JSX.Element => {
+const LogInPage = (): JSX.Element => {
   return (
-    <HomePageStyled>
+    <LogInPageStyled>
       <div className="info">
         <header>
           <img src="images/logo.png" alt="" />
@@ -21,8 +22,11 @@ const HomePage = (): JSX.Element => {
           <button>Sign-Up</button>
         </div>
       </div>
-    </HomePageStyled>
+      <div className="login-form">
+        <LogInForm />
+      </div>
+    </LogInPageStyled>
   );
 };
 
-export default HomePage;
+export default LogInPage;

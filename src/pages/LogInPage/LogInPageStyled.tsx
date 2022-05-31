@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const HomePageStyled = styled.section`
+const LogInPageStyled = styled.section`
   background-image: linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.6)),
     url("images/background.jpg");
   background-repeat: no-repeat;
@@ -10,11 +10,12 @@ const HomePageStyled = styled.section`
 
   padding: 50px;
   text-align: left;
+  display: flex;
 
   color: #fff;
 
   .info {
-    width: 50%;
+    margin-right: 100px;
     header {
       margin-bottom: 100px;
       img {
@@ -29,7 +30,6 @@ const HomePageStyled = styled.section`
 
     p {
       margin: 40px 0 40px 0;
-      padding-right: 100px;
     }
 
     button {
@@ -50,6 +50,10 @@ const HomePageStyled = styled.section`
       background-color: #000;
     }
   }
+
+  .login-form {
+    margin: auto;
+  }
 `;
 
-export default HomePageStyled;
+export default LogInPageStyled;
