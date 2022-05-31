@@ -1,6 +1,6 @@
 import userReducer, {
-  loginActionCreator,
-  logoutActionCreator,
+  logInActionCreator,
+  logOutActionCreator,
 } from "./userSlice";
 
 describe("Given a userSlice reducer", () => {
@@ -17,7 +17,7 @@ describe("Given a userSlice reducer", () => {
         logged: true,
       };
 
-      const action = loginActionCreator(initialUser);
+      const action = logInActionCreator(initialUser);
       const loggedUser = userReducer(initialUser, action);
 
       expect(loggedUser).toEqual(expectedUser);
@@ -32,7 +32,7 @@ describe("Given a userSlice reducer", () => {
       };
       const expectedUserStatus = false;
 
-      const logoutAction = logoutActionCreator();
+      const logoutAction = logOutActionCreator();
       const loggedoutUser = userReducer(loggedUser, logoutAction);
 
       expect(loggedoutUser.logged).toEqual(expectedUserStatus);
