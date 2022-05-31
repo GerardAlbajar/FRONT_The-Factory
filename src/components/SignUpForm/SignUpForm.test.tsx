@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { Provider } from "react-redux";
 import store from "../../redux/store/store";
 import SignUpForm from "./SignUpForm";
@@ -53,6 +54,60 @@ describe("Given the SignUpForm component", () => {
       );
 
       expect(screen.getByRole("button")).toBeInTheDocument();
+    });
+  });
+
+  describe("When the word 'hola' is written to the name input field", () => {
+    test("Then the value of the Name input field should be 'hola'", () => {
+      const inputText = "hola";
+
+      render(
+        <Provider store={store}>
+          <SignUpForm />
+        </Provider>
+      );
+
+      userEvent.type(screen.getByLabelText("Name"), inputText);
+      expect(screen.getByLabelText("Name")).toHaveValue(inputText);
+    });
+
+    test("Then the value of the Mail input field should be 'hola'", () => {
+      const inputText = "hola";
+
+      render(
+        <Provider store={store}>
+          <SignUpForm />
+        </Provider>
+      );
+
+      userEvent.type(screen.getByLabelText("Mail"), inputText);
+      expect(screen.getByLabelText("Mail")).toHaveValue(inputText);
+    });
+
+    test("Then the value of the Username input field should be 'hola'", () => {
+      const inputText = "hola";
+
+      render(
+        <Provider store={store}>
+          <SignUpForm />
+        </Provider>
+      );
+
+      userEvent.type(screen.getByLabelText("Username"), inputText);
+      expect(screen.getByLabelText("Username")).toHaveValue(inputText);
+    });
+
+    test("Then the value of the Password input field should be 'hola'", () => {
+      const inputText = "hola";
+
+      render(
+        <Provider store={store}>
+          <SignUpForm />
+        </Provider>
+      );
+
+      userEvent.type(screen.getByLabelText("Password"), inputText);
+      expect(screen.getByLabelText("Password")).toHaveValue(inputText);
     });
   });
 });
