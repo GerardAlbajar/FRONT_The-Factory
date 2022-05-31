@@ -2,10 +2,16 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../redux/store/store";
 import { signUpUserThunk } from "../../redux/thunks/userThunks/userThunks";
+import { UserRegister } from "../../types/types";
 import SignUpFormStyled from "./SignUpFormStyled";
 
 const SignUpForm = (): JSX.Element => {
-  const formInitialState = { name: "", mail: "", username: "", password: "" };
+  const formInitialState: UserRegister = {
+    name: "",
+    mail: "",
+    username: "",
+    password: "",
+  };
 
   const [formData, setFormData] = useState(formInitialState);
 
@@ -21,7 +27,17 @@ const SignUpForm = (): JSX.Element => {
   const signUpUser = (event: { preventDefault: () => void }) => {
     event.preventDefault();
 
+    if (
+      formData.name === "" ||
+      formData.mail === "" ||
+      formData.username === "" ||
+      formData.password === ""
+    ) {
+      return;
+    }
+
     dispatch(signUpUserThunk(formData));
+    setFormData(formInitialState);
   };
 
   return (
