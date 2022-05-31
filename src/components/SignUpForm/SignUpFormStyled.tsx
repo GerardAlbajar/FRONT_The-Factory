@@ -8,15 +8,18 @@ const SignUpFormStyled = styled.section`
   text-align: left;
   border-width: 1px;
   border-color: #fff;
+
   h2 {
     color: #fff;
     margin-bottom: 40px;
   }
+
   label {
     color: #fff;
     text-align: left;
     margin: 10px 0 10px 0;
   }
+
   form {
     display: flex;
     flex-direction: column;
@@ -24,6 +27,7 @@ const SignUpFormStyled = styled.section`
     margin: 2px;
     width: 100%;
   }
+
   input {
     border-radius: 5px;
     border-width: 1px;
@@ -34,6 +38,7 @@ const SignUpFormStyled = styled.section`
     padding: 10px;
     font-family: "Courier New", Courier, monospace;
   }
+
   button {
     border-width: 1px;
     border-radius: 5px;
@@ -47,6 +52,12 @@ const SignUpFormStyled = styled.section`
     font-family: "Courier New", Courier, monospace;
     font-weight: bolder;
   }
+
+  button:hover {
+    color: white;
+    background-color: #000;
+  }
+
   p {
     text-align: center;
     cursor: pointer;
