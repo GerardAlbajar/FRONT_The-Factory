@@ -1,4 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import store from "../../redux/store/store";
 import LogInPage from "./LogInPage";
 const { render, screen } = require("@testing-library/react");
 
@@ -6,9 +8,11 @@ describe("Given a LogInPage Component", () => {
   describe("When it's invoked)", () => {
     test("Then it should render a the LogInPage component with two buttons elements", () => {
       render(
-        <BrowserRouter>
-          <LogInPage />
-        </BrowserRouter>
+        <Provider store={store}>
+          <BrowserRouter>
+            <LogInPage />
+          </BrowserRouter>
+        </Provider>
       );
 
       const expectedNumberOfButtons = 3;
@@ -20,9 +24,11 @@ describe("Given a LogInPage Component", () => {
 
     test("Then it should render one 'Username' label", () => {
       render(
-        <BrowserRouter>
-          <LogInPage />
-        </BrowserRouter>
+        <Provider store={store}>
+          <BrowserRouter>
+            <LogInPage />
+          </BrowserRouter>
+        </Provider>
       );
 
       expect(screen.getAllByText("Username")).toHaveLength(1);
@@ -30,9 +36,11 @@ describe("Given a LogInPage Component", () => {
 
     test("Then it should render one 'Password' label", () => {
       render(
-        <BrowserRouter>
-          <LogInPage />
-        </BrowserRouter>
+        <Provider store={store}>
+          <BrowserRouter>
+            <LogInPage />
+          </BrowserRouter>
+        </Provider>
       );
 
       expect(screen.getAllByText("Password")).toHaveLength(1);
