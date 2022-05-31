@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import LogInForm from "../../components/LogInForm/LogInForm";
 import LogInPageStyled from "./LogInPageStyled";
 
@@ -6,7 +7,9 @@ const LogInPage = (): JSX.Element => {
     <LogInPageStyled>
       <div className="info">
         <header>
-          <img src="images/logo.png" alt="" />
+          <NavLink to="/home">
+            <img src="images/logo.png" alt="Astro Factory Logo" />
+          </NavLink>
         </header>
         <h2> CHECK-IN </h2>
         <p>
@@ -18,8 +21,12 @@ const LogInPage = (): JSX.Element => {
         <p>We boldly go where no Mining Mission has gone before. Join us.</p>
         <p>Select Mining Experience:</p>
         <div>
-          <button>Log-In</button>
-          <button>Sign-Up</button>
+          <NavLink to="/login">
+            <button>Log-In</button>
+          </NavLink>
+          <NavLink to="/register">
+            <button>Sign-Up</button>
+          </NavLink>
         </div>
       </div>
       <div className="login-form">
