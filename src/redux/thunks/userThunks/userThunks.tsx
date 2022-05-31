@@ -31,7 +31,7 @@ export const signUpUserThunk =
     const {
       data: { token },
     } = await axios.post(route, newUser);
-    localStorage.setItem("token", token);
+    localStorage.setItem("TokenKey", token);
     const userInfo: UserInfo = jwtDecode(token);
 
     dispatch(logInActionCreator(userInfo));
