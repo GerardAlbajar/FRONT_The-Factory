@@ -27,15 +27,6 @@ const SignUpForm = (): JSX.Element => {
   const signUpUser = (event: { preventDefault: () => void }) => {
     event.preventDefault();
 
-    if (
-      formData.name === "" ||
-      formData.mail === "" ||
-      formData.username === "" ||
-      formData.password === ""
-    ) {
-      return;
-    }
-
     dispatch(signUpUserThunk(formData));
     setFormData(formInitialState);
   };
@@ -57,7 +48,12 @@ const SignUpForm = (): JSX.Element => {
           value={formData.password}
           onChange={changeData}
         />
-        <button type="submit">Sign-Up</button>
+        <button
+          disabled={formData.username === "" || formData.password === ""}
+          type="submit"
+        >
+          Sign-Up
+        </button>
       </form>
     </SignUpFormStyled>
   );

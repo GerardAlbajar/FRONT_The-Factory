@@ -23,10 +23,6 @@ const LogInForm = (): JSX.Element => {
   const logInUser = (event: { preventDefault: () => void }) => {
     event.preventDefault();
 
-    if (formData.username === "" || formData.password === "") {
-      return;
-    }
-
     dispatch(logInUserThunk(formData));
     setFormData(formInitialState);
   };
@@ -44,7 +40,12 @@ const LogInForm = (): JSX.Element => {
           value={formData.password}
           onChange={changeData}
         />
-        <button type="submit">Log-In</button>
+        <button
+          disabled={formData.username === "" || formData.password === ""}
+          type="submit"
+        >
+          Log-In
+        </button>
       </form>
     </LogInFormStyled>
   );
