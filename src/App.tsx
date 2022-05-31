@@ -1,10 +1,11 @@
 import React from "react";
 import "./App.css";
+import HomePage from "./pages/HomePage/HomePage";
 
 const App = (): JSX.Element => {
   return (
     <div className="App">
-      <h1>Working on it</h1>
+      <HomePage />
     </div>
   );
 };
