@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../../redux/store/store";
+import { signUpUserThunk } from "../../redux/thunks/userThunks/userThunks";
 import SignUpFormStyled from "./SignUpFormStyled";
 
 const SignUpForm = (): JSX.Element => {
@@ -13,16 +16,18 @@ const SignUpForm = (): JSX.Element => {
     });
   };
 
+  const dispatch: AppDispatch = useDispatch();
+
+  const signUpUser = (event: { preventDefault: () => void }) => {
+    event.preventDefault();
+
+    dispatch(signUpUserThunk(formData));
+  };
+
   return (
     <SignUpFormStyled>
       <h2> Sign-Up </h2>
-      <form
-        onSubmit={() => {
-          "I'm working";
-        }}
-        noValidate
-        autoComplete="off"
-      >
+      <form onSubmit={signUpUser} noValidate autoComplete="off">
         <label htmlFor="name"> Name </label>
         <input id="name" value={formData.name} onChange={changeData} />
         <label htmlFor="mail"> Mail </label>
