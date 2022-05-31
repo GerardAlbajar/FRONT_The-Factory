@@ -27,15 +27,6 @@ const SignUpForm = (): JSX.Element => {
   const signUpUser = (event: { preventDefault: () => void }) => {
     event.preventDefault();
 
-    if (
-      formData.name === "" ||
-      formData.mail === "" ||
-      formData.username === "" ||
-      formData.password === ""
-    ) {
-      return;
-    }
-
     dispatch(signUpUserThunk(formData));
     setFormData(formInitialState);
   };

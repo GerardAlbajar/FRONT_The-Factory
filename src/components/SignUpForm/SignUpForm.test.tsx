@@ -110,4 +110,32 @@ describe("Given the SignUpForm component", () => {
       expect(screen.getByLabelText("Password")).toHaveValue(inputText);
     });
   });
+
+  describe("When the user type whatever the username and password input fields", () => {
+    test("Then the Log-In button should be enabled", () => {
+      const name = "test";
+      const mail = "test";
+      const username = "test";
+      const password = "test";
+
+      render(
+        <Provider store={store}>
+          <SignUpForm />
+        </Provider>
+      );
+
+      const nameInput = screen.getByLabelText("Name");
+      const mailInput = screen.getByLabelText("Mail");
+      const usernameInput = screen.getByLabelText("Username");
+      const passwordInput = screen.getByLabelText("Password");
+      const signUpButton = screen.getByRole("button", { name: "Sign-Up" });
+
+      userEvent.type(nameInput, name);
+      userEvent.type(mailInput, mail);
+      userEvent.type(usernameInput, username);
+      userEvent.type(passwordInput, password);
+
+      expect(signUpButton).not.toBeDisabled();
+    });
+  });
 });
