@@ -38,3 +38,7 @@ export interface Item {
   type: "part" | "set";
   data: Part | Astro;
 }
+
+export interface LoggedCheckerProps {
+  children: JSX.Element;
+}
