@@ -1,4 +1,8 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../../redux/store/store";
+import { logInUserThunk } from "../../redux/thunks/userThunks/userThunks";
+
 import LogInFormStyled from "./LogInFormStyled";
 
 const LogInForm = (): JSX.Element => {
@@ -13,16 +17,18 @@ const LogInForm = (): JSX.Element => {
     });
   };
 
+  const dispatch: AppDispatch = useDispatch();
+
+  const logInUser = (event: { preventDefault: () => void }) => {
+    event.preventDefault();
+
+    dispatch(logInUserThunk(formData));
+  };
+
   return (
     <LogInFormStyled>
       <h2> Log-In</h2>
-      <form
-        onSubmit={() => {
-          "I'm working";
-        }}
-        noValidate
-        autoComplete="off"
-      >
+      <form onSubmit={logInUser} noValidate autoComplete="off">
         <label htmlFor="username"> Username </label>
         <input id="username" value={formData.username} onChange={changeData} />
         <label htmlFor="password"> Password </label>

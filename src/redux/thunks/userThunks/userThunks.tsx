@@ -4,21 +4,21 @@ import { UserInfo, UserLogin, UserRegister } from "../../../types/types";
 import { logInActionCreator } from "../../features/userSlice";
 import { AppDispatch } from "../../store/store";
 
-export const loginUserThunk =
+export const logInUserThunk =
   (loginInformation: UserLogin) => async (dispatch: AppDispatch) => {
     const route: string = `${process.env.REACT_APP_API_URL}user/login`;
     const {
       data: { token },
     } = await axios.post(route, loginInformation);
 
-    localStorage.setItem("token", token);
+    localStorage.setItem("TokenKey", token);
 
     const userInfo: UserInfo = jwtDecode(token);
 
     dispatch(logInActionCreator(userInfo));
   };
 
-export const registerUserThunk =
+export const signUpUserThunk =
   (formData: UserRegister) => async (dispatch: AppDispatch) => {
     await axios.post(`${process.env.REACT_APP_API_URL}user/register`, formData);
 
