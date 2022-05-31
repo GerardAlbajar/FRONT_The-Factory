@@ -48,7 +48,12 @@ const SignUpForm = (): JSX.Element => {
           value={formData.password}
           onChange={changeData}
         />
-        <button type="submit">Sign-Up</button>
+        <button
+          disabled={formData.username === "" || formData.password === ""}
+          type="submit"
+        >
+          Sign-Up
+        </button>
       </form>
     </SignUpFormStyled>
   );

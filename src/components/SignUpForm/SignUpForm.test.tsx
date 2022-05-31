@@ -112,7 +112,7 @@ describe("Given the SignUpForm component", () => {
   });
 
   describe("When the user type whatever the username and password input fields", () => {
-    test("Then the Log-In button should be enabled", () => {
+    test("Then the Sign-Up button should be enabled", () => {
       const name = "test";
       const mail = "test";
       const username = "test";
