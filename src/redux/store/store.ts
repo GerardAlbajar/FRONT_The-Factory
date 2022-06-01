@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
+import astroReducer from "../features/astroSlice";
 import userReducer from "../features/userSlice";
 
 const store = configureStore({
   reducer: {
     user: userReducer,
+    astro: astroReducer,
   },
 });
 
