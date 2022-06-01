@@ -49,7 +49,12 @@ const SignUpForm = (): JSX.Element => {
           onChange={changeData}
         />
         <button
-          disabled={formData.username === "" || formData.password === ""}
+          disabled={
+            formData.name === "" ||
+            formData.mail === "" ||
+            formData.username === "" ||
+            formData.password === ""
+          }
           type="submit"
         >
           Sign-Up

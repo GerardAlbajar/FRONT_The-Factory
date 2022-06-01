@@ -5,13 +5,13 @@ import { RootState } from "../../redux/store/store";
 import { LoggedCheckerProps } from "../../types/types";
 
 const LoggedChecker = ({ children }: LoggedCheckerProps) => {
-  const { logged } = useSelector((state: RootState) => state.user);
+  const logged = useSelector((state: RootState) => state.user.logged);
 
   const navigate = useNavigate();
 
   useEffect(() => {
     if (!logged) navigate("/login");
-  }, [logged, navigate]);
+  });
 
   if (logged) {
     return children;

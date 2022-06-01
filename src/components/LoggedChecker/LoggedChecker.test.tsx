@@ -12,7 +12,7 @@ let mockLogged = false;
 
 jest.mock("react-redux", () => ({
   ...jest.requireActual("react-redux"),
-  useSelector: () => ({ logged: mockLogged }),
+  useSelector: () => mockLogged,
 }));
 
 describe("Given a LoggedChecked function", () => {
