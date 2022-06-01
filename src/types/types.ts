@@ -1,4 +1,4 @@
-export interface User {
+export interface UserState {
   name: string;
   username: string;
   logged: boolean;
@@ -21,22 +21,33 @@ export interface UserRegister {
   password: string;
 }
 
-export interface Part {
+export interface AstroPart {
   id: string;
-  type: "rocket" | "astro" | "naut";
-  framework: "react" | "angular" | "vue" | "jquery";
+  name: string;
+  type: string;
+  framework: string;
   assembled: boolean;
+  image: string;
+  partimage: string;
 }
 
 export interface Astro {
+  parts: {
+    rocket: string;
+    astro: string;
+    naut: string;
+  };
   id: string;
-  perfect: boolean;
-  parts: Part[];
+  name: string;
+  type: string;
+  flighthistory: boolean;
+  stickers: number;
+  framework: string;
+  assembled: boolean;
 }
 
-export interface Item {
-  type: "part" | "set";
-  data: Part | Astro;
+export interface AstrosState {
+  astros: (Astro | AstroPart)[];
 }
 
 export interface LoggedCheckerProps {
