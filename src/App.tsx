@@ -1,8 +1,7 @@
 import jwtDecode from "jwt-decode";
 import React, { useEffect } from "react";
 import { Toaster } from "react-hot-toast";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import "./App.css";
 import LoggedChecker from "./components/LoggedChecker/LoggedChecker";
