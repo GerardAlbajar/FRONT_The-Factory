@@ -6,14 +6,12 @@ const HeaderStyled = styled.header`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    height: 50px;
-    padding: 1.2em;
+    height: 78px;
     position: relative;
     z-index: 50;
   }
   .top-nav_img img {
     width: 200px;
-    margin-left: 30px;
   }
   .menu {
     display: flex;
@@ -25,7 +23,7 @@ const HeaderStyled = styled.header`
     z-index: 50;
   }
   .menu > li {
-    margin: 0 1rem;
+    margin: 50px;
   }
   a {
     text-decoration: none;

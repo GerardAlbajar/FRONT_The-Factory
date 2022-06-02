@@ -11,7 +11,7 @@ const LoggedChecker = ({ children }: LoggedCheckerProps) => {
 
   useEffect(() => {
     if (!logged) navigate("/login");
-  });
+  }, [logged, navigate]);
 
   if (logged) {
     return children;
