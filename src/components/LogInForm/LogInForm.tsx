@@ -1,5 +1,4 @@
 import { useState } from "react";
-import toast, { Toaster } from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../redux/store/store";
 import { logInUserThunk } from "../../redux/thunks/userThunks/userThunks";
@@ -23,13 +22,7 @@ const LogInForm = (): JSX.Element => {
   const logInUser = (event: { preventDefault: () => void }) => {
     event.preventDefault();
 
-    const toastPromise = dispatch(logInUserThunk(formData));
-
-    toast.promise(toastPromise, {
-      loading: "Loading",
-      success: "Connection successfull",
-      error: "Connection failed",
-    });
+    dispatch(logInUserThunk(formData));
 
     setFormData(formInitialState);
   };
@@ -53,7 +46,6 @@ const LogInForm = (): JSX.Element => {
         >
           Log-In
         </button>
-        <Toaster />
       </form>
     </LogInFormStyled>
   );
