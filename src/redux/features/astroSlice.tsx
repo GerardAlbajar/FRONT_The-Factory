@@ -4,7 +4,7 @@ import { AstroType } from "../../types/types";
 const initialState: AstroType[] = [];
 
 const astroSlice = createSlice({
-  name: "astros",
+  name: "astro",
   initialState,
   reducers: {
     loadAstros: (astro, action: PayloadAction<AstroType[]>) => [
