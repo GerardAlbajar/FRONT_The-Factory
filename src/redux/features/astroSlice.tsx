@@ -1,13 +1,13 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Astro, AstroPart } from "../../types/types";
+import { AstroType } from "../../types/types";
 
-const initialState: (Astro | AstroPart)[] = [];
+const initialState: AstroType[] = [];
 
 const astroSlice = createSlice({
-  name: "astro",
+  name: "astros",
   initialState,
   reducers: {
-    loadAstros: (astro, action: PayloadAction<(Astro | AstroPart)[]>) => [
+    loadAstros: (astro, action: PayloadAction<AstroType[]>) => [
       ...action.payload,
     ],
   },
