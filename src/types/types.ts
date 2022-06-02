@@ -1,3 +1,5 @@
+export type AstroType = Astro | AstroPart;
+
 export interface UserState {
   name: string;
   username: string;
@@ -32,11 +34,7 @@ export interface AstroPart {
 }
 
 export interface Astro {
-  parts: {
-    rocket: string;
-    astro: string;
-    naut: string;
-  };
+  parts: Parts;
   id: string;
   name: string;
   type: string;
@@ -47,9 +45,36 @@ export interface Astro {
 }
 
 export interface AstrosState {
-  astros: (Astro | AstroPart)[];
+  astros: AstroType[];
 }
 
 export interface LoggedCheckerProps {
   children: JSX.Element;
+}
+
+export interface Part {
+  id: string;
+  image: string;
+}
+
+export interface Parts {
+  rocket: Part;
+  astro: Part;
+  naut: Part;
+}
+
+export interface AstroPerfectProps {
+  parts: Parts;
+  name: string;
+  id: string;
+}
+
+export interface AstroPartProps {
+  name: string;
+  id: string;
+  image: string;
+}
+
+export interface AstrosListProps {
+  astros: AstroType[];
 }
