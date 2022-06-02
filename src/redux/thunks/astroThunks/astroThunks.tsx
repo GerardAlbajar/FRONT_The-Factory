@@ -1,4 +1,4 @@
-import apiInterceptor from "../../../utils/api";
+import apiInterceptor from "../../../utils/apiInterceptor";
 import { loadAstrosActionCreator } from "../../features/astroSlice";
 import { AppDispatch } from "../../store/store";
 

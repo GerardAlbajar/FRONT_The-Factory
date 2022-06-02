@@ -1,10 +1,10 @@
-import { Astro, AstroPart } from "../../types/types";
+import { AstroType } from "../../types/types";
 import astroReducer, { loadAstrosActionCreator } from "./astroSlice";
 
 describe("Given a astroSlice reducer", () => {
   describe("When it receives a list of Astros", () => {
     test("Then it should return/update the new state with this list", () => {
-      const initialAstros: (Astro | AstroPart)[] = [];
+      const initialAstros: AstroType[] = [];
 
       const expectedAstros = [
         {
