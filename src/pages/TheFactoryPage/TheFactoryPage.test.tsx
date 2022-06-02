@@ -8,9 +8,11 @@ describe("Given a HomePage Component", () => {
   describe("When it's invoked)", () => {
     test("Then it should render a the HomePage component with two buttons elements", () => {
       render(
-        <BrowserRouter>
-          <TheFactoryPage />
-        </BrowserRouter>
+        <Provider store={store}>
+          <BrowserRouter>
+            <TheFactoryPage />
+          </BrowserRouter>
+        </Provider>
       );
 
       const expectedNumberOfButtons = 1;

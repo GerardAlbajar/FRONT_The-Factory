@@ -1,7 +1,17 @@
+import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
+import { logOutActionCreator } from "../../redux/features/userSlice";
 import HeaderStyled from "./HeaderStyled";
 
 const Header = () => {
+  const dispatch = useDispatch();
+
+  const logOutUser = () => {
+    localStorage.removeItem("TokenKey");
+
+    dispatch(logOutActionCreator());
+  };
+
   return (
     <HeaderStyled>
       <nav className="top-nav">
@@ -28,7 +38,9 @@ const Header = () => {
             <NavLink to="/home">Your Collection</NavLink>
           </li>
           <li>
-            <NavLink to="/home">Log Out</NavLink>
+            <NavLink to="/home" onClick={logOutUser}>
+              Log Out
+            </NavLink>
           </li>
         </ul>
       </nav>
