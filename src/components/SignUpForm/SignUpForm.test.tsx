@@ -1,8 +1,16 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
 import store from "../../redux/store/store";
 import SignUpForm from "./SignUpForm";
+
+const mockDispatch = jest.fn();
+
+jest.mock("react-redux", () => ({
+  ...jest.requireActual("react-redux"),
+  useDispatch: () => mockDispatch,
+}));
 
 describe("Given the SignUpForm component", () => {
   describe("When it's invoked", () => {
@@ -136,6 +144,50 @@ describe("Given the SignUpForm component", () => {
       userEvent.type(passwordInput, password);
 
       expect(signUpButton).not.toBeDisabled();
+    });
+  });
+
+  describe("When a user enters its name, mail, username, password and submit the form", () => {
+    test("Then it should call the dispatch action with its credentials", () => {
+      const formData = {
+        name: "test",
+        mail: "test",
+        username: "test",
+        password: "test",
+      };
+
+      render(
+        <Provider store={store}>
+          <BrowserRouter>
+            <SignUpForm />
+          </BrowserRouter>
+        </Provider>
+      );
+
+      const nameInput: HTMLInputElement = screen.getByRole("textbox", {
+        name: "Name",
+      });
+      userEvent.type(nameInput, formData.name);
+
+      const mailInput: HTMLInputElement = screen.getByRole("textbox", {
+        name: "Mail",
+      });
+      userEvent.type(mailInput, formData.name);
+
+      const usernameInput: HTMLInputElement = screen.getByRole("textbox", {
+        name: "Username",
+      });
+      userEvent.type(usernameInput, formData.username);
+      const passwordInput: HTMLInputElement =
+        screen.getByLabelText(/password/i);
+      userEvent.type(passwordInput, formData.password);
+
+      const expectedButton: HTMLButtonElement = screen.getByRole("button", {
+        name: "Sign-Up",
+      });
+      userEvent.click(expectedButton);
+
+      expect(mockDispatch).toHaveBeenCalled();
     });
   });
 });

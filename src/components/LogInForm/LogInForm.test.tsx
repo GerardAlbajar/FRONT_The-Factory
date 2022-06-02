@@ -1,8 +1,16 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
 import store from "../../redux/store/store";
 import LogInForm from "./LogInForm";
+
+const mockDispatch = jest.fn();
+
+jest.mock("react-redux", () => ({
+  ...jest.requireActual("react-redux"),
+  useDispatch: () => mockDispatch,
+}));
 
 describe("Given the LogInForm component", () => {
   describe("When it's invoked", () => {
@@ -84,6 +92,38 @@ describe("Given the LogInForm component", () => {
       userEvent.type(passwordInput, password);
 
       expect(loginButton).not.toBeDisabled();
+    });
+  });
+
+  describe("When a user enters its username and password and submit the form", () => {
+    test("Then it should call the dispatch action with its credentials", () => {
+      const formData = {
+        username: "test1",
+        password: "test1",
+      };
+
+      render(
+        <Provider store={store}>
+          <BrowserRouter>
+            <LogInForm />
+          </BrowserRouter>
+        </Provider>
+      );
+
+      const usernameInput: HTMLInputElement = screen.getByRole("textbox", {
+        name: "Username",
+      });
+      userEvent.type(usernameInput, formData.username);
+      const passwordInput: HTMLInputElement =
+        screen.getByLabelText(/password/i);
+      userEvent.type(passwordInput, formData.password);
+
+      const expectedButton: HTMLButtonElement = screen.getByRole("button", {
+        name: "Log-In",
+      });
+      userEvent.click(expectedButton);
+
+      expect(mockDispatch).toHaveBeenCalled();
     });
   });
 });
