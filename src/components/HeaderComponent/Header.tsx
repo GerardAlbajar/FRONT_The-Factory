@@ -6,7 +6,7 @@ const Header = () => {
     <HeaderStyled>
       <nav className="top-nav">
         <div className="top-nav_img">
-          <NavLink to="/home">
+          <NavLink to="/thefactory">
             <img src="images/logo.png" alt="WeekArtLogo" />
           </NavLink>
         </div>
@@ -16,7 +16,7 @@ const Header = () => {
         </label>
         <ul className="menu">
           <li>
-            <NavLink to="/home">The Factory</NavLink>
+            <NavLink to="/thefactory">The Factory</NavLink>
           </li>
           <li>
             <NavLink to="/home">Astros</NavLink>
