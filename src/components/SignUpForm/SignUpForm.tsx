@@ -1,5 +1,4 @@
 import { useState } from "react";
-import toast, { Toaster } from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../redux/store/store";
 import { signUpUserThunk } from "../../redux/thunks/userThunks/userThunks";
@@ -28,13 +27,7 @@ const SignUpForm = (): JSX.Element => {
   const signUpUser = (event: { preventDefault: () => void }) => {
     event.preventDefault();
 
-    const toastPromise = dispatch(signUpUserThunk(formData));
-
-    toast.promise(toastPromise, {
-      loading: "Loading",
-      success: "Connection successfull",
-      error: "Connection failed",
-    });
+    dispatch(signUpUserThunk(formData));
 
     setFormData(formInitialState);
   };
@@ -67,7 +60,6 @@ const SignUpForm = (): JSX.Element => {
         >
           Sign-Up
         </button>
-        <Toaster />
       </form>
     </SignUpFormStyled>
   );

@@ -8,6 +8,7 @@ import { AppDispatch } from "../../store/store";
 export const logInUserThunk =
   (loginInformation: UserLogin) => async (dispatch: AppDispatch) => {
     try {
+      toast.loading("Loading");
       const route: string = `${process.env.REACT_APP_API_URL}user/login`;
       const {
         data: { token },
@@ -18,8 +19,11 @@ export const logInUserThunk =
       const userInfo: UserInfo = jwtDecode(token);
 
       dispatch(logInActionCreator(userInfo));
+
+      toast.dismiss();
       toast.success("Log-In successfull");
     } catch (error) {
+      toast.dismiss();
       toast.error("Wrong Username or Password");
     }
   };
@@ -27,6 +31,7 @@ export const logInUserThunk =
 export const signUpUserThunk =
   (formData: UserRegister) => async (dispatch: AppDispatch) => {
     try {
+      toast.loading("Loading");
       await axios.post(
         `${process.env.REACT_APP_API_URL}user/register`,
         formData
@@ -47,8 +52,11 @@ export const signUpUserThunk =
       const userInfo: UserInfo = jwtDecode(token);
 
       dispatch(logInActionCreator(userInfo));
+
+      toast.dismiss();
       toast.success("Sign-Up successfull");
     } catch (error) {
+      toast.dismiss();
       toast.error("Something went wrong");
     }
   };
