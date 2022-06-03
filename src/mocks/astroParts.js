@@ -1,6 +1,7 @@
 const mockAstroParts = [
   {
     id: "#812736SJDGHA",
+    idRender: "#812736SJDGHA",
     name: "REACT ASTRO",
     type: "Astro",
     framework: "React",
@@ -13,6 +14,7 @@ const mockAstroParts = [
   },
   {
     id: "#812736SJDGHB",
+    idRender: "#812736SJDGHA",
     name: "REACT NAUT",
     type: "Naut",
     framework: "React",
