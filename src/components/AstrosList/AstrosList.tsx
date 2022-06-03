@@ -14,9 +14,9 @@ const AstrosList = ({ astros }: AstrosListProps) => {
     <AstrosListStyled>
       {astros.map((astro: AstroType) =>
         astro.type === "Perfect Astro" ? (
-          <AstroPerfect key={astro.id} {...(astro as AstroPerfectProps)} />
+          <AstroPerfect key={astro.name} {...(astro as AstroPerfectProps)} />
         ) : (
-          <AstroPart key={astro.id} {...(astro as AstroPartProps)} />
+          <AstroPart key={astro.name} {...(astro as AstroPartProps)} />
         )
       )}
     </AstrosListStyled>

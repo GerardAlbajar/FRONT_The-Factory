@@ -25,6 +25,7 @@ export interface UserRegister {
 
 export interface AstroPart {
   id: string;
+  idRender: string;
   name: string;
   type: string;
   framework: string;
@@ -36,6 +37,7 @@ export interface AstroPart {
 export interface Astro {
   parts: Parts;
   id: string;
+  idRender: string;
   name: string;
   type: string;
   flighthistory: boolean;
@@ -54,6 +56,7 @@ export interface LoggedCheckerProps {
 
 export interface Part {
   id: string;
+  idRender: string;
   image: string;
 }
 
@@ -67,11 +70,13 @@ export interface AstroPerfectProps {
   parts: Parts;
   name: string;
   id: string;
+  idRender: string;
 }
 
 export interface AstroPartProps {
   name: string;
   id: string;
+  idRender: string;
   image: string;
 }
 
