@@ -17,7 +17,9 @@ describe("Given the LogInForm component", () => {
     test("Then it should render one 'Username' label", () => {
       render(
         <Provider store={store}>
-          <LogInForm />
+          <BrowserRouter>
+            <LogInForm />
+          </BrowserRouter>
         </Provider>
       );
 
@@ -27,7 +29,9 @@ describe("Given the LogInForm component", () => {
     test("Then it should render one 'Password' label", () => {
       render(
         <Provider store={store}>
-          <LogInForm />
+          <BrowserRouter>
+            <LogInForm />
+          </BrowserRouter>
         </Provider>
       );
 
@@ -37,7 +41,9 @@ describe("Given the LogInForm component", () => {
     test("Then it should render a button", () => {
       render(
         <Provider store={store}>
-          <LogInForm />
+          <BrowserRouter>
+            <LogInForm />
+          </BrowserRouter>
         </Provider>
       );
 
@@ -51,7 +57,9 @@ describe("Given the LogInForm component", () => {
 
       render(
         <Provider store={store}>
-          <LogInForm />
+          <BrowserRouter>
+            <LogInForm />
+          </BrowserRouter>
         </Provider>
       );
 
@@ -64,7 +72,9 @@ describe("Given the LogInForm component", () => {
 
       render(
         <Provider store={store}>
-          <LogInForm />
+          <BrowserRouter>
+            <LogInForm />
+          </BrowserRouter>
         </Provider>
       );
 
@@ -80,7 +90,9 @@ describe("Given the LogInForm component", () => {
 
       render(
         <Provider store={store}>
-          <LogInForm />
+          <BrowserRouter>
+            <LogInForm />
+          </BrowserRouter>
         </Provider>
       );
 

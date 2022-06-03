@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { NavigateFunction, useNavigate } from "react-router-dom";
 import { AppDispatch } from "../../redux/store/store";
 import { logInUserThunk } from "../../redux/thunks/userThunks/userThunks";
 import { UserLogin } from "../../types/types";
@@ -19,13 +20,17 @@ const LogInForm = (): JSX.Element => {
 
   const dispatch: AppDispatch = useDispatch();
 
+  const navigate: NavigateFunction = useNavigate();
+
   const logInUser = (event: { preventDefault: () => void }) => {
     event.preventDefault();
 
-    dispatch(logInUserThunk(formData));
+    dispatch(logInUserThunk(formData, navigate));
 
     setFormData(formInitialState);
   };
+
+  const disabledIf = formData.username === "" || formData.password === "";
 
   return (
     <LogInFormStyled>
@@ -41,7 +46,11 @@ const LogInForm = (): JSX.Element => {
           onChange={changeData}
         />
         <button
-          disabled={formData.username === "" || formData.password === ""}
+          disabled={disabledIf}
+          style={{
+            opacity: disabledIf ? 0.5 : 1,
+            pointerEvents: disabledIf ? "none" : "initial",
+          }}
           type="submit"
         >
           Log-In

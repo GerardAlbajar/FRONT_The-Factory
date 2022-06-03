@@ -1,12 +1,14 @@
 import axios from "axios";
 import jwtDecode from "jwt-decode";
 import toast from "react-hot-toast";
+import { NavigateFunction } from "react-router-dom";
 import { UserInfo, UserLogin, UserRegister } from "../../../types/types";
 import { logInActionCreator } from "../../features/userSlice";
 import { AppDispatch } from "../../store/store";
 
 export const logInUserThunk =
-  (loginInformation: UserLogin) => async (dispatch: AppDispatch) => {
+  (loginInformation: UserLogin, navigate: NavigateFunction) =>
+  async (dispatch: AppDispatch) => {
     try {
       toast.loading("Loading");
       const route: string = `${process.env.REACT_APP_API_URL}user/login`;
@@ -22,6 +24,8 @@ export const logInUserThunk =
 
       toast.dismiss();
       toast.success("Log-In successfull");
+
+      navigate("/thefactory");
     } catch (error) {
       toast.dismiss();
       toast.error("Wrong Username or Password");

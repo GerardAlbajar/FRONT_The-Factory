@@ -32,6 +32,12 @@ const SignUpForm = (): JSX.Element => {
     setFormData(formInitialState);
   };
 
+  const disabledIf =
+    formData.name === "" ||
+    formData.mail === "" ||
+    formData.username === "" ||
+    formData.password === "";
+
   return (
     <SignUpFormStyled>
       <h2> Sign-Up </h2>
@@ -50,12 +56,11 @@ const SignUpForm = (): JSX.Element => {
           onChange={changeData}
         />
         <button
-          disabled={
-            formData.name === "" ||
-            formData.mail === "" ||
-            formData.username === "" ||
-            formData.password === ""
-          }
+          disabled={disabledIf}
+          style={{
+            opacity: disabledIf ? 0.5 : 1,
+            pointerEvents: disabledIf ? "none" : "initial",
+          }}
           type="submit"
         >
           Sign-Up

@@ -29,7 +29,7 @@ const Header = () => {
             <NavLink to="/thefactory">The Factory</NavLink>
           </li>
           <li>
-            <NavLink to="/home">Astros</NavLink>
+            <NavLink to="/astros">Astros</NavLink>
           </li>
           <li>
             <NavLink to="/home">Road Map</NavLink>
