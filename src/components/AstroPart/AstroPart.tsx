@@ -8,7 +8,9 @@ const AstroPart = ({ name, image, id }: AstroPartProps): JSX.Element => {
         <li>
           <img src={image} alt={name} />
         </li>
-        <li>{name}</li>
+        <li>
+          <p>{name}</p>
+        </li>
         <li>Id: {id}</li>
       </ul>
     </AstroPartStyled>

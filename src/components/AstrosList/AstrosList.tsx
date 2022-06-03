@@ -1,3 +1,4 @@
+import { Toaster } from "react-hot-toast";
 import {
   AstroPartProps,
   AstroPerfectProps,
@@ -6,10 +7,11 @@ import {
 } from "../../types/types";
 import AstroPart from "../AstroPart/AstroPart";
 import AstroPerfect from "../AstroPerfect/AstroPerfect";
+import AstrosListStyled from "./AstrosListStyled";
 
 const AstrosList = ({ astros }: AstrosListProps) => {
   return astros.length ? (
-    <ul>
+    <AstrosListStyled>
       {astros.map((astro: AstroType) =>
         astro.type === "Perfect Astro" ? (
           <AstroPerfect key={astro.id} {...(astro as AstroPerfectProps)} />
@@ -17,9 +19,9 @@ const AstrosList = ({ astros }: AstrosListProps) => {
           <AstroPart key={astro.id} {...(astro as AstroPartProps)} />
         )
       )}
-    </ul>
+    </AstrosListStyled>
   ) : (
-    <p>Waiting for astros</p>
+    <Toaster />
   );
 };
 

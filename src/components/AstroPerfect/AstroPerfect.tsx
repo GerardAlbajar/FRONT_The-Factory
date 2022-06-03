@@ -10,7 +10,9 @@ const AstroPerfect = ({ parts, name, id }: AstroPerfectProps): JSX.Element => {
           <img src={parts.astro.image} alt={name} />
           <img src={parts.naut.image} alt={name} />
         </li>
-        <li>{name}</li>
+        <li>
+          <p>{name}</p>
+        </li>
         <li>Id: {id}</li>
       </ul>
     </AstroPerfectStyled>
