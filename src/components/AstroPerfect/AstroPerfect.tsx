@@ -1,7 +1,11 @@
 import { AstroPerfectProps } from "../../types/types";
 import AstroPerfectStyled from "./AstroPerfectStyled";
 
-const AstroPerfect = ({ parts, name, id }: AstroPerfectProps): JSX.Element => {
+const AstroPerfect = ({
+  parts,
+  name,
+  idRender,
+}: AstroPerfectProps): JSX.Element => {
   return (
     <AstroPerfectStyled>
       <ul>
@@ -13,7 +17,7 @@ const AstroPerfect = ({ parts, name, id }: AstroPerfectProps): JSX.Element => {
         <li>
           <p>{name}</p>
         </li>
-        <li>Id: {id}</li>
+        <li>Id: {idRender}</li>
       </ul>
     </AstroPerfectStyled>
   );
