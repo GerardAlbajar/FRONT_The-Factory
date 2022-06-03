@@ -1,13 +1,24 @@
+import toast from "react-hot-toast";
 import apiInterceptor from "../../../utils/apiInterceptor";
 import { loadAstrosActionCreator } from "../../features/astroSlice";
 import { AppDispatch } from "../../store/store";
 
 export const loadAstrosThunk = () => async (dispatch: AppDispatch) => {
-  const { data: astroPartData } = await apiInterceptor.get("/astroparts");
+  try {
+    const { data: astroPartData } = await apiInterceptor.get("/astroparts");
 
-  const { data: astroData } = await apiInterceptor.get("/astros");
+    toast.loading("Loading");
 
-  const astrosData = [...astroPartData, ...astroData];
+    const { data: astroData } = await apiInterceptor.get("/astros");
 
-  dispatch(loadAstrosActionCreator(astrosData));
+    const astrosData = [...astroPartData, ...astroData];
+
+    dispatch(loadAstrosActionCreator(astrosData));
+
+    toast.dismiss();
+    toast.success("Astros loaded successful");
+  } catch (error) {
+    toast.dismiss();
+    toast.error("Something went wrong");
+  }
 };
