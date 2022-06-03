@@ -14,6 +14,7 @@ describe("Given a loadAstrosThunk function", () => {
         {
           assembled: false,
           framework: "React",
+          idRender: "812736SJDGHA",
           id: "812736SJDGHA",
           image:
             "https://firebasestorage.googleapis.com/v0/b/astro-factory.appspot.com/o/REACT_ASTRO.png?alt=media&token=8934e3f3-8e42-4ddd-8dec-9fe74acc6c47",
