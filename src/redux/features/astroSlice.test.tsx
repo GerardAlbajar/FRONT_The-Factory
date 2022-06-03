@@ -11,6 +11,7 @@ describe("Given a astroSlice reducer", () => {
           assembled: false,
           framework: "React",
           id: "812736SJDGHA",
+          idRender: "#812736SJDGHA",
           image:
             "https://firebasestorage.googleapis.com/v0/b/astro-factory.appspot.com/o/REACT_ASTRO.png?alt=media&token=8934e3f3-8e42-4ddd-8dec-9fe74acc6c47",
           name: "REACT ASTRO",

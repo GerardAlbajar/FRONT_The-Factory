@@ -1,6 +1,7 @@
 const mockAstros = [
   {
     id: "#612736SJDGHA",
+    idRender: "#812736SJDGHA",
     name: "REACT PERFECT ASTRO",
     type: "Perfect Astro",
     flighthistory: "false",
@@ -27,6 +28,7 @@ const mockAstros = [
   },
   {
     id: "#612736SJDGHB",
+    idRender: "#812736SJDGHA",
     name: "VUE PERFECT ASTRO",
     type: "Perfect Astro",
     flighthistory: "false",
