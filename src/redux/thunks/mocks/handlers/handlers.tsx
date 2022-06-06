@@ -30,4 +30,8 @@ export const handlers = [
   rest.get(`${process.env.REACT_APP_API_URL}astroparts`, (_, res, ctx) =>
     res(ctx.status(200), ctx.json([]))
   ),
+  rest.get(
+    `${process.env.REACT_APP_API_URL}inventory/629b202506d1fe0a1259ffe7`,
+    (_, res, ctx) => res(ctx.status(200), ctx.json(mockAstros))
+  ),
 ];
