@@ -4,6 +4,7 @@ import { UserInfo, UserState } from "../../types/types";
 const initialState: UserState = {
   name: "",
   username: "",
+  id: "",
   logged: localStorage.getItem("token") ? true : false,
 };
 
@@ -16,7 +17,7 @@ const userSlice = createSlice({
       ...action.payload,
       logged: true,
     }),
-    logout: () => ({ name: "", username: "", logged: false }),
+    logout: () => ({ name: "", username: "", logged: false, id: "" }),
   },
 });
 

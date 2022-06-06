@@ -8,6 +8,7 @@ import LoggedChecker from "./components/LoggedChecker/LoggedChecker";
 import AstrosPage from "./pages/AstrosPage/AstrosPage";
 import HomePage from "./pages/HomePage/HomePage";
 import LogInPage from "./pages/LogInPage/LogInPage";
+import MyCollectionPage from "./pages/MyCollectionPage/MyCollectionPage";
 import SignUpPage from "./pages/SignUpPage/SignUpPage";
 import TheFactoryPage from "./pages/TheFactoryPage/TheFactoryPage";
 import { logInActionCreator } from "./redux/features/userSlice";
@@ -47,6 +48,14 @@ const App = (): JSX.Element => {
           element={
             <LoggedChecker>
               <AstrosPage />
+            </LoggedChecker>
+          }
+        />
+        <Route
+          path="/myinventory"
+          element={
+            <LoggedChecker>
+              <MyCollectionPage />
             </LoggedChecker>
           }
         />

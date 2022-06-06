@@ -12,6 +12,7 @@ describe("Given the loginUserThunk", () => {
     test("Then the dispatch function will be called", async () => {
       const dispatch = jest.fn();
       const navigate = jest.fn();
+
       const thunk = logInUserThunk(
         { username: "hola", password: "hola" },
         navigate
@@ -25,12 +26,17 @@ describe("Given the loginUserThunk", () => {
   describe("When RegisterUserThunk is invoked", () => {
     test("Then the dispatch function will be called", async () => {
       const dispatch = jest.fn();
-      const thunk = signUpUserThunk({
-        name: "test",
-        mail: "test",
-        username: "test",
-        password: "test",
-      });
+      const navigate = jest.fn();
+
+      const thunk = signUpUserThunk(
+        {
+          name: "test",
+          mail: "test",
+          username: "test",
+          password: "test",
+        },
+        navigate
+      );
       await thunk(dispatch);
 
       expect(dispatch).toHaveBeenCalled();

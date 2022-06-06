@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { NavigateFunction, useNavigate } from "react-router-dom";
 import { AppDispatch } from "../../redux/store/store";
 import { signUpUserThunk } from "../../redux/thunks/userThunks/userThunks";
 import { UserRegister } from "../../types/types";
@@ -24,10 +25,12 @@ const SignUpForm = (): JSX.Element => {
 
   const dispatch: AppDispatch = useDispatch();
 
+  const navigate: NavigateFunction = useNavigate();
+
   const signUpUser = (event: { preventDefault: () => void }) => {
     event.preventDefault();
 
-    dispatch(signUpUserThunk(formData));
+    dispatch(signUpUserThunk(formData, navigate));
 
     setFormData(formInitialState);
   };

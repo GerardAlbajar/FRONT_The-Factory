@@ -10,11 +10,13 @@ describe("Given a userSlice reducer", () => {
         name: "Test",
         username: "test",
         logged: false,
+        id: "",
       };
       const expectedUser = {
         name: "Test",
         username: "test",
         logged: true,
+        id: "",
       };
 
       const action = logInActionCreator(initialUser);
@@ -29,6 +31,7 @@ describe("Given a userSlice reducer", () => {
         name: "Test1",
         username: "test1",
         logged: true,
+        id: "",
       };
       const expectedUserStatus = false;
 
