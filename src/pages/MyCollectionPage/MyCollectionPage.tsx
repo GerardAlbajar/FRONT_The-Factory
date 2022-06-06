@@ -1,6 +1,5 @@
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import AstrosList from "../../components/AstrosList/AstrosList";
 import Header from "../../components/HeaderComponent/Header";
 import { AppDispatch, RootState } from "../../redux/store/store";

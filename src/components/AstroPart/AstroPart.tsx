@@ -1,5 +1,4 @@
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { AppDispatch, RootState } from "../../redux/store/store";
 import { removeInventoryPartThunk } from "../../redux/thunks/astroThunks/astroThunks";
 import { AstroPartProps } from "../../types/types";
