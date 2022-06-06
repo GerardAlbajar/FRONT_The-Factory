@@ -4,11 +4,13 @@ export interface UserState {
   name: string;
   username: string;
   logged: boolean;
+  id: string;
 }
 
 export interface UserInfo {
   name: string;
   username: string;
+  id: string;
 }
 
 export interface UserLogin {
@@ -71,6 +73,7 @@ export interface AstroPerfectProps {
   name: string;
   id: string;
   idRender: string;
+  showIcon: boolean;
 }
 
 export interface AstroPartProps {
@@ -78,8 +81,10 @@ export interface AstroPartProps {
   id: string;
   idRender: string;
   image: string;
+  showIcon: boolean;
 }
 
 export interface AstrosListProps {
   astros: AstroType[];
+  isRemovable?: boolean;
 }
