@@ -32,10 +32,10 @@ const Header = () => {
             <NavLink to="/astros">Astros</NavLink>
           </li>
           <li>
-            <NavLink to="/home">Road Map</NavLink>
+            <NavLink to="/thefactory">Road Map</NavLink>
           </li>
           <li>
-            <NavLink to="/home">Your Collection</NavLink>
+            <NavLink to="/myinventory">Your Collection</NavLink>
           </li>
           <li>
             <NavLink to="/home" onClick={logOutUser}>
