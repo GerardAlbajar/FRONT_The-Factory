@@ -17,7 +17,9 @@ describe("Given the SignUpForm component", () => {
     test("Then it should render one 'Name' label", () => {
       render(
         <Provider store={store}>
-          <SignUpForm />
+          <BrowserRouter>
+            <SignUpForm />
+          </BrowserRouter>
         </Provider>
       );
 
@@ -27,7 +29,9 @@ describe("Given the SignUpForm component", () => {
     test("Then it should render one 'Mail' label", () => {
       render(
         <Provider store={store}>
-          <SignUpForm />
+          <BrowserRouter>
+            <SignUpForm />
+          </BrowserRouter>
         </Provider>
       );
 
@@ -37,7 +41,9 @@ describe("Given the SignUpForm component", () => {
     test("Then it should render one 'Username' label", () => {
       render(
         <Provider store={store}>
-          <SignUpForm />
+          <BrowserRouter>
+            <SignUpForm />
+          </BrowserRouter>
         </Provider>
       );
 
@@ -47,7 +53,9 @@ describe("Given the SignUpForm component", () => {
     test("Then it should render one 'Password' label", () => {
       render(
         <Provider store={store}>
-          <SignUpForm />
+          <BrowserRouter>
+            <SignUpForm />
+          </BrowserRouter>
         </Provider>
       );
 
@@ -57,7 +65,9 @@ describe("Given the SignUpForm component", () => {
     test("Then it should render a button", () => {
       render(
         <Provider store={store}>
-          <SignUpForm />
+          <BrowserRouter>
+            <SignUpForm />
+          </BrowserRouter>
         </Provider>
       );
 
@@ -71,7 +81,9 @@ describe("Given the SignUpForm component", () => {
 
       render(
         <Provider store={store}>
-          <SignUpForm />
+          <BrowserRouter>
+            <SignUpForm />
+          </BrowserRouter>
         </Provider>
       );
 
@@ -84,7 +96,9 @@ describe("Given the SignUpForm component", () => {
 
       render(
         <Provider store={store}>
-          <SignUpForm />
+          <BrowserRouter>
+            <SignUpForm />
+          </BrowserRouter>
         </Provider>
       );
 
@@ -97,7 +111,9 @@ describe("Given the SignUpForm component", () => {
 
       render(
         <Provider store={store}>
-          <SignUpForm />
+          <BrowserRouter>
+            <SignUpForm />
+          </BrowserRouter>
         </Provider>
       );
 
@@ -110,7 +126,9 @@ describe("Given the SignUpForm component", () => {
 
       render(
         <Provider store={store}>
-          <SignUpForm />
+          <BrowserRouter>
+            <SignUpForm />
+          </BrowserRouter>
         </Provider>
       );
 
@@ -128,7 +146,9 @@ describe("Given the SignUpForm component", () => {
 
       render(
         <Provider store={store}>
-          <SignUpForm />
+          <BrowserRouter>
+            <SignUpForm />
+          </BrowserRouter>
         </Provider>
       );
 
