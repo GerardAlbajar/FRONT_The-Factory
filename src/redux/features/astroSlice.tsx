@@ -10,9 +10,19 @@ const astroSlice = createSlice({
     loadAstros: (astro, action: PayloadAction<AstroType[]>) => [
       ...action.payload,
     ],
+    loadUserCollection: (astro, action: PayloadAction<AstroType[]>) => [
+      ...action.payload,
+    ],
+    removeInventoryItem: (astro, action: PayloadAction<AstroType[]>) => [
+      ...action.payload,
+    ],
   },
 });
 
-export const { loadAstros: loadAstrosActionCreator } = astroSlice.actions;
+export const {
+  loadAstros: loadAstrosActionCreator,
+  loadUserCollection: loadUserCollectionActionCreator,
+  removeInventoryItem: removeInventoryItemActionCreator,
+} = astroSlice.actions;
 
 export default astroSlice.reducer;
