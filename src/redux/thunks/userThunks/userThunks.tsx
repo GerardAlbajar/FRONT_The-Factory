@@ -23,7 +23,7 @@ export const logInUserThunk =
       dispatch(logInActionCreator(userInfo));
 
       toast.dismiss();
-      toast.success("Log-In successfull");
+      toast.success("Logged In successfully");
 
       navigate("/thefactory");
     } catch (error) {
@@ -33,7 +33,8 @@ export const logInUserThunk =
   };
 
 export const signUpUserThunk =
-  (formData: UserRegister) => async (dispatch: AppDispatch) => {
+  (formData: UserRegister, navigate: NavigateFunction) =>
+  async (dispatch: AppDispatch) => {
     try {
       toast.loading("Loading");
       await axios.post(
@@ -58,7 +59,8 @@ export const signUpUserThunk =
       dispatch(logInActionCreator(userInfo));
 
       toast.dismiss();
-      toast.success("Sign-Up successfull");
+      toast.success("Signed Up successfully");
+      navigate("/thefactory");
     } catch (error) {
       toast.dismiss();
       toast.error("Something went wrong");
