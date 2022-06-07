@@ -1,4 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
+import { NavLink } from "react-router-dom";
 import { AppDispatch, RootState } from "../../redux/store/store";
 import { removeInventoryPartThunk } from "../../redux/thunks/astroThunks/astroThunks";
 import { AstroPartProps } from "../../types/types";
@@ -23,14 +24,16 @@ const AstroPart = ({
     <AstroPartStyled>
       <ul>
         <li>
-          <img src={image} alt={name} />
+          <NavLink to={`/details/astroparts/${id}`}>
+            <img src={image} alt={name} />
+          </NavLink>
         </li>
         <li>
           <p>{name}</p>
         </li>
         <li>Id: {idRender}</li>
       </ul>
-      {showIcon ? <p onClick={removePartItem}> X </p> : null}
+      {showIcon ? <button onClick={removePartItem}>Remove</button> : null}
     </AstroPartStyled>
   );
 };
