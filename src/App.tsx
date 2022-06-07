@@ -5,8 +5,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import LoggedChecker from "./components/LoggedChecker/LoggedChecker";
+import AssembleMutantPage from "./pages/AssembleMutanPage/AssembleMutantPage";
 import AstrosPage from "./pages/AstrosPage/AstrosPage";
-import DetailPage from "./pages/DetailPage/DetailPage";
+import DetailsPage from "./pages/DetailsPage/DetailsPage";
 import HomePage from "./pages/HomePage/HomePage";
 import LogInPage from "./pages/LogInPage/LogInPage";
 import MyCollectionPage from "./pages/MyCollectionPage/MyCollectionPage";
@@ -64,7 +65,15 @@ const App = (): JSX.Element => {
           path="/details/:astroType/:id"
           element={
             <LoggedChecker>
-              <DetailPage />
+              <DetailsPage />
+            </LoggedChecker>
+          }
+        />
+        <Route
+          path="/assemble"
+          element={
+            <LoggedChecker>
+              <AssembleMutantPage />
             </LoggedChecker>
           }
         />
