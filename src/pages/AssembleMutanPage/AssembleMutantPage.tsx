@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import AstroPerfect from "../../components/AstroPerfect/AstroPerfect";
 import AstrosList from "../../components/AstrosList/AstrosList";
 import Header from "../../components/HeaderComponent/Header";
