@@ -6,6 +6,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import LoggedChecker from "./components/LoggedChecker/LoggedChecker";
 import AstrosPage from "./pages/AstrosPage/AstrosPage";
+import DetailPage from "./pages/DetailPage/DetailPage";
 import HomePage from "./pages/HomePage/HomePage";
 import LogInPage from "./pages/LogInPage/LogInPage";
 import MyCollectionPage from "./pages/MyCollectionPage/MyCollectionPage";
@@ -56,6 +57,14 @@ const App = (): JSX.Element => {
           element={
             <LoggedChecker>
               <MyCollectionPage />
+            </LoggedChecker>
+          }
+        />
+        <Route
+          path="/details/:astroType/:id"
+          element={
+            <LoggedChecker>
+              <DetailPage />
             </LoggedChecker>
           }
         />

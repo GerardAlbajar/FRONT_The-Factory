@@ -42,7 +42,7 @@ export interface Astro {
   idRender: string;
   name: string;
   type: string;
-  flighthistory: boolean;
+  flighthistory: number;
   stickers: number;
   framework: string;
   assembled: boolean;

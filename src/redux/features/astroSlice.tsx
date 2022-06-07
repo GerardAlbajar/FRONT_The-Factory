@@ -16,6 +16,9 @@ const astroSlice = createSlice({
     removeInventoryItem: (astro, action: PayloadAction<AstroType[]>) => [
       ...action.payload,
     ],
+    addInventoryItem: (astro, action: PayloadAction<AstroType[]>) => [
+      ...action.payload,
+    ],
   },
 });
 
@@ -23,6 +26,7 @@ export const {
   loadAstros: loadAstrosActionCreator,
   loadUserCollection: loadUserCollectionActionCreator,
   removeInventoryItem: removeInventoryItemActionCreator,
+  addInventoryItem: addInventoryItemActionCreator,
 } = astroSlice.actions;
 
 export default astroSlice.reducer;

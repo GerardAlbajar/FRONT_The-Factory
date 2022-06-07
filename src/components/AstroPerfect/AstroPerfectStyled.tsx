@@ -1,6 +1,11 @@
 import styled from "styled-components";
 
 const AstroPerfectStyled = styled.li`
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+
   li {
     list-style: none;
 
@@ -26,9 +31,17 @@ const AstroPerfectStyled = styled.li`
     }
   }
 
+  .astro:hover {
+    filter: invert(100%);
+  }
+
   ul {
     width: 200px;
     padding: 0 30px;
+  }
+
+  p:hover {
+    cursor: pointer;
   }
 `;
 

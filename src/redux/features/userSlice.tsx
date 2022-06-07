@@ -5,7 +5,7 @@ const initialState: UserState = {
   name: "",
   username: "",
   id: "",
-  logged: localStorage.getItem("token") ? true : false,
+  logged: false,
 };
 
 const userSlice = createSlice({
