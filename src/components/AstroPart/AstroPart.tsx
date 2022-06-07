@@ -11,6 +11,7 @@ const AstroPart = ({
   idRender,
   id,
   showIcon,
+  onSelectItem,
 }: AstroPartProps): JSX.Element => {
   const userId = useSelector((state: RootState) => state.user.id);
 
@@ -21,19 +22,30 @@ const AstroPart = ({
   };
 
   return (
-    <AstroPartStyled>
+    <AstroPartStyled onClick={onSelectItem}>
       <ul>
         <li>
-          <NavLink to={`/details/astroparts/${id}`}>
+          {onSelectItem ? (
             <img src={image} alt={name} />
-          </NavLink>
+          ) : (
+            <NavLink to={`/details/astroparts/${id}`}>
+              <img src={image} alt={name} />
+            </NavLink>
+          )}
         </li>
         <li>
           <p>{name}</p>
         </li>
         <li>Id: {idRender}</li>
       </ul>
-      {showIcon ? <button onClick={removePartItem}>Remove</button> : null}
+      {showIcon ? (
+        <img
+          className="delete"
+          src="images/delete.svg"
+          alt="Delete Button"
+          onClick={removePartItem}
+        />
+      ) : null}
     </AstroPartStyled>
   );
 };
