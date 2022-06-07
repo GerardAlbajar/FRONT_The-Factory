@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const AstroPerfectStyled = styled.li`
+  position: relative;
   a {
     text-decoration: none;
     color: #000;
@@ -40,7 +41,15 @@ const AstroPerfectStyled = styled.li`
     padding: 0 30px;
   }
 
-  p:hover {
+  .delete {
+    width: 36px;
+    position: absolute;
+    top: 40px;
+    right: 20px;
+  }
+
+  .delete:hover {
+    filter: invert(100%);
     cursor: pointer;
   }
 `;

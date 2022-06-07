@@ -3,25 +3,27 @@ import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import store from "../../redux/store/store";
 import { server } from "../../redux/thunks/mocks/server/server";
-import DetailPage from "./DetailPage";
+import DetailsPage from "./DetailsPage";
 const { render, screen } = require("@testing-library/react");
 
 beforeEach(() => server.listen());
 afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
 
-describe("Given a DetailPage Component", () => {
+describe("Given a DetailsPage Component", () => {
   describe("When it's invoked)", () => {
     test("Then it should render four number of headings", () => {
       render(
         <Provider store={store}>
           <BrowserRouter>
-            <DetailPage />
+            <DetailsPage />
           </BrowserRouter>
         </Provider>
       );
 
-      expect(screen.getAllByRole("link")).toHaveLength(6);
+      const totalList = screen.getByText("Waiting for details");
+
+      expect(totalList).toBeInTheDocument();
     });
   });
 });

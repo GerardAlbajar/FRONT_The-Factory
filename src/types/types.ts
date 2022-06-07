@@ -63,9 +63,9 @@ export interface Part {
 }
 
 export interface Parts {
-  rocket: Part;
-  astro: Part;
-  naut: Part;
+  rocket?: Part;
+  astro?: Part;
+  naut?: Part;
 }
 
 export interface AstroPerfectProps {
@@ -82,9 +82,30 @@ export interface AstroPartProps {
   idRender: string;
   image: string;
   showIcon: boolean;
+  onSelectItem?(): void;
 }
 
 export interface AstrosListProps {
   astros: AstroType[];
   isRemovable?: boolean;
+  onSelectItem?(item: AstroPart): void;
+}
+
+export interface MyItems {
+  astros: AstroPart[];
+  nauts: AstroPart[];
+  rockets: AstroPart[];
+}
+
+export interface MutantAstro {
+  astro?: AstroPart;
+  naut?: AstroPart;
+  rocket?: AstroPart;
+  idRender?: string;
+  name?: string;
+  type?: string;
+  flighthistory?: 0;
+  stickers?: 1;
+  framework?: "Mutant Astro";
+  assembled?: true;
 }

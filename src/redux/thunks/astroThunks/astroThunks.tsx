@@ -1,7 +1,10 @@
 import toast from "react-hot-toast";
+import { Astro } from "../../../types/types";
 import apiInterceptor from "../../../utils/apiInterceptor";
 import {
   addInventoryItemActionCreator,
+  createMutantAstroActionCreator,
+  editMutantAstroActionCreator,
   loadAstrosActionCreator,
   loadUserCollectionActionCreator,
   removeInventoryItemActionCreator,
@@ -32,8 +35,6 @@ export const loadAstroDetail = async (
     const { data: astroDetailData } = await apiInterceptor.get(
       `/${astroType}/${id}`
     );
-
-    debugger;
 
     return astroDetailData;
   } catch {
@@ -98,8 +99,6 @@ export const addInventoryPartThunk =
         `/inventory/${id}/${inventoryKey}/${idItem}`
       );
 
-      toast.loading("Loading");
-
       const updatedAstros = [
         ...userInventoryData.part,
         ...userInventoryData.perfect,
@@ -108,7 +107,58 @@ export const addInventoryPartThunk =
       dispatch(addInventoryItemActionCreator(updatedAstros));
 
       toast.dismiss();
-      toast.success(`Your item ${idItem} has been added at your collection`);
+      toast.success(`Your item has been added at your collection`);
+    } catch {
+      toast.dismiss();
+      toast.error("Something went wrong");
+    }
+  };
+
+export const createMutantAstroThunk =
+  (id: string, mutantAstro: Astro) => async (dispatch: AppDispatch) => {
+    try {
+      const { data: userInventoryData } = await apiInterceptor.post(
+        `/inventory/${id}`,
+        mutantAstro
+      );
+
+      const updatedAstros = [
+        ...userInventoryData.part,
+        ...userInventoryData.perfect,
+      ];
+
+      dispatch(createMutantAstroActionCreator(updatedAstros));
+
+      toast.dismiss();
+      toast.success(
+        `Your Mutan Astro ${mutantAstro.name} has been created successfully`
+      );
+    } catch {
+      toast.dismiss();
+      toast.error("Something went wrong");
+    }
+  };
+
+export const editMutantAstroThunk =
+  (id: string, mutantAstroUpdated: Astro, idMutantAstro: string) =>
+  async (dispatch: AppDispatch) => {
+    try {
+      const { data: userInventoryData } = await apiInterceptor.put(
+        `/inventory/${id}/${idMutantAstro}`,
+        mutantAstroUpdated
+      );
+
+      const updatedAstros = [
+        ...userInventoryData.part,
+        ...userInventoryData.perfect,
+      ];
+
+      dispatch(editMutantAstroActionCreator(updatedAstros));
+
+      toast.dismiss();
+      toast.success(
+        `Your Mutan Astro ${mutantAstroUpdated.name} has been edited successfully`
+      );
     } catch {
       toast.dismiss();
       toast.error("Something went wrong");

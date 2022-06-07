@@ -1,17 +1,28 @@
 import styled from "styled-components";
 
-const DetailPageStyled = styled.section`
+const DetailsPageStyled = styled.section`
   padding: 50px;
   background-color: #fff;
   text-align: left;
-  margin-left: 50px;
 
   div {
     width: 100%;
-    .hola {
+    .container {
       display: flex;
       margin-left: 0px;
+      .info {
+        justify-content: right;
+        text-align: right;
+        padding: 0 100px;
 
+        .main {
+          margin-top: 90px;
+        }
+
+        h2 {
+          margin-top: 50px;
+        }
+      }
       .astro {
         display: flex;
         position: relative;
@@ -19,20 +30,17 @@ const DetailPageStyled = styled.section`
         height: 363px;
 
         img {
-          width: 400px;
+          width: 430px;
           position: absolute;
           left: 0;
           padding: 50px 0 20px;
         }
       }
     }
-    h2 {
-      margin-top: 100px;
-    }
 
     img {
-      width: 400px;
-      padding: 50px 0 20px;
+      width: 430px;
+      padding: 19.92px 0 20px;
     }
 
     ul {
@@ -55,10 +63,14 @@ const DetailPageStyled = styled.section`
     font-weight: bolder;
   }
 
+  button.goback {
+    position: absolute;
+  }
+
   button:hover {
     color: white;
     background-color: #000;
   }
 `;
 
-export default DetailPageStyled;
+export default DetailsPageStyled;

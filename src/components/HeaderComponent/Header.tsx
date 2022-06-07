@@ -17,7 +17,7 @@ const Header = () => {
       <nav className="top-nav">
         <div className="top-nav_img">
           <NavLink to="/thefactory">
-            <img src={"images/logo.png"} alt="Astro Factory Logo" />
+            <img src="images/logo.png" alt="Astro Factory Logo" />
           </NavLink>
         </div>
         <input id="menu-toggle" type="checkbox" />
