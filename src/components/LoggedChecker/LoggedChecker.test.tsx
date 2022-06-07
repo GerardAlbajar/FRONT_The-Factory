@@ -40,6 +40,7 @@ describe("Given a LoggedChecked function", () => {
 
       const searchedText = screen.getAllByRole("heading");
 
+      expect(mockUseNavigate).toHaveBeenCalled();
       expect(searchedText).toHaveLength(expectedHeaders);
     });
   });
