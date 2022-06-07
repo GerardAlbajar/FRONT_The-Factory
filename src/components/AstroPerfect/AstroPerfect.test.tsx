@@ -46,8 +46,8 @@ describe("Given the AstroPart Component", () => {
         </Provider>
       );
 
-      const expectedButton: HTMLButtonElement = screen.getByRole("button", {
-        name: "Remove",
+      const expectedButton: HTMLButtonElement = screen.getByRole("img", {
+        name: "Delete Button",
       });
       userEvent.click(expectedButton);
 

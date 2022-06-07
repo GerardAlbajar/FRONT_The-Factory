@@ -25,9 +25,9 @@ const AstroPerfect = ({
       <ul>
         <li className="astro">
           <NavLink to={`/details/astros/${id}`}>
-            <img src={parts.rocket.image} alt={name} />
-            <img src={parts.astro.image} alt={name} />
-            <img src={parts.naut.image} alt={name} />
+            {parts.rocket ? <img src={parts.rocket.image} alt={name} /> : null}
+            {parts.astro ? <img src={parts.astro.image} alt={name} /> : null}
+            {parts.naut ? <img src={parts.naut.image} alt={name} /> : null}
           </NavLink>
         </li>
         <li>
@@ -35,7 +35,14 @@ const AstroPerfect = ({
         </li>
         <li>Id: {idRender}</li>
       </ul>
-      {showIcon ? <button onClick={removePerfectItem}> Remove </button> : null}
+      {showIcon ? (
+        <img
+          className="delete"
+          src="images/delete.svg"
+          alt="Delete Button"
+          onClick={removePerfectItem}
+        />
+      ) : null}
     </AstroPerfectStyled>
   );
 };
