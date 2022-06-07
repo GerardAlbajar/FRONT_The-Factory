@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
 import AstrosList from "../../components/AstrosList/AstrosList";
 import Header from "../../components/HeaderComponent/Header";
 import { AppDispatch, RootState } from "../../redux/store/store";
@@ -22,6 +23,14 @@ const MyCollectionPage = () => {
     <MyCollectionPageStyled>
       <Header />
       <h2>YOUR COLLECTION</h2>
+      <div>
+        <NavLink className="link" to="/assemble">
+          <button> ASSEMBLE A MUTANT ASTRO </button>
+        </NavLink>
+        <NavLink className="link" to="/thefactory">
+          <button> EDIT A MUTANT ASTRO </button>
+        </NavLink>
+      </div>
       <AstrosList astros={astros} isRemovable />
     </MyCollectionPageStyled>
   );
