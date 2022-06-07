@@ -8,27 +8,28 @@ import AstroPart from "../AstroPart/AstroPart";
 import AstroPerfect from "../AstroPerfect/AstroPerfect";
 import AstrosListStyled from "./AstrosListStyled";
 
-const AstrosList = ({ astros, isRemovable = false }: AstrosListProps) => {
+const AstrosList = ({
+  astros,
+  isRemovable = false,
+  onSelectItem,
+}: AstrosListProps) => {
   return astros.length ? (
     <AstrosListStyled>
       {astros.map((astro: AstroType) =>
         astro.type === "Perfect Astro" ? (
           <AstroPerfect
             key={astro.name}
-            parts={(astro as Astro).parts}
-            name={(astro as Astro).name}
-            id={(astro as Astro).id}
-            idRender={(astro as Astro).idRender}
+            {...(astro as Astro)}
             showIcon={isRemovable}
           />
         ) : (
           <AstroPart
             key={astro.name}
-            image={(astro as IAstroPart).image}
-            name={(astro as IAstroPart).name}
-            id={(astro as IAstroPart).id}
-            idRender={(astro as IAstroPart).idRender}
+            {...(astro as IAstroPart)}
             showIcon={isRemovable}
+            onSelectItem={
+              onSelectItem ? () => onSelectItem(astro as IAstroPart) : undefined
+            }
           />
         )
       )}
