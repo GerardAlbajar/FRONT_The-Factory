@@ -7,8 +7,8 @@ const RenderAstroDetails = ({
   parts,
   name,
   type,
-  flighthistory,
-  stickers,
+  flighthistory = 0,
+  stickers = 1,
   framework,
   idRender,
   id,
@@ -38,11 +38,11 @@ const RenderAstroDetails = ({
           </li>
           <li>
             <h3> Flight History </h3>
-            <p>{(flighthistory = 0)}</p>
+            <p>{flighthistory}</p>
           </li>
           <li>
             <h3> Sticker(s) </h3>
-            <p>{(stickers = 1)}</p>
+            <p>{stickers}</p>
           </li>
         </ul>
         <button onClick={() => addAstroItem(id)}>Add Item</button>
