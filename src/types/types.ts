@@ -82,12 +82,14 @@ export interface AstroPartProps {
   idRender: string;
   image: string;
   showIcon: boolean;
+  selected?: boolean;
   onSelectItem?(): void;
 }
 
 export interface AstrosListProps {
   astros: AstroType[];
   isRemovable?: boolean;
+  selectedPartId?: string;
   onSelectItem?(item: AstroPart): void;
 }
 
@@ -108,4 +110,5 @@ export interface MutantAstro {
   stickers?: 1;
   framework?: "Mutant Astro";
   assembled?: true;
+  id?: string;
 }
