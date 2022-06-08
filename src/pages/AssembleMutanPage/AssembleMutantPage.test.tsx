@@ -33,7 +33,7 @@ describe("Given the AssembleMutantPage Component", () => {
       userEvent.type(usernameInput, formData.mutantName);
 
       const expectedButton: HTMLButtonElement = screen.getByRole("button", {
-        name: "ASSAMBLE A MUTANT ASTRO",
+        name: "ASSEMBLE A MUTANT ASTRO",
       });
       userEvent.click(expectedButton);
 

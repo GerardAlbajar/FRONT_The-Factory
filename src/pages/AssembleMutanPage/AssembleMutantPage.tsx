@@ -108,6 +108,7 @@ const AssembleMutantPage = () => {
       <h3> Your Astros </h3>
       <AstrosList
         astros={myItems.astros}
+        selectedPartId={mutantAstro.astro ? mutantAstro.astro.id : undefined}
         onSelectItem={(astro) =>
           setMutantAstro({
             ...mutantAstro,
@@ -118,6 +119,7 @@ const AssembleMutantPage = () => {
       <h3> Your Rockets </h3>
       <AstrosList
         astros={myItems.rockets}
+        selectedPartId={mutantAstro.rocket ? mutantAstro.rocket.id : undefined}
         onSelectItem={(rocket) =>
           setMutantAstro({
             ...mutantAstro,
@@ -128,6 +130,7 @@ const AssembleMutantPage = () => {
       <h3> Your Nauts </h3>
       <AstrosList
         astros={myItems.nauts}
+        selectedPartId={mutantAstro.naut ? mutantAstro.naut.id : undefined}
         onSelectItem={(naut) =>
           setMutantAstro({
             ...mutantAstro,
@@ -141,7 +144,7 @@ const AssembleMutantPage = () => {
           name=""
           parts={mutantAstro}
           id=""
-          idRender={`${mutantAstro.idRender}`}
+          idRender={"Not set yet"}
           showIcon={false}
         />
       </ul>
@@ -160,7 +163,7 @@ const AssembleMutantPage = () => {
           }}
           type="submit"
         >
-          ASSAMBLE A MUTANT ASTRO
+          ASSEMBLE A MUTANT ASTRO
         </button>
       </form>
     </AssembleMutantPageStyled>

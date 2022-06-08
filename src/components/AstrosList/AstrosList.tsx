@@ -11,6 +11,7 @@ import AstrosListStyled from "./AstrosListStyled";
 const AstrosList = ({
   astros,
   isRemovable = false,
+  selectedPartId,
   onSelectItem,
 }: AstrosListProps) => {
   return astros.length ? (
@@ -26,6 +27,7 @@ const AstrosList = ({
           <AstroPart
             key={astro.name}
             {...(astro as IAstroPart)}
+            selected={astro.id === selectedPartId}
             showIcon={isRemovable}
             onSelectItem={
               onSelectItem ? () => onSelectItem(astro as IAstroPart) : undefined

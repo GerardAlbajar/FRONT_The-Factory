@@ -32,7 +32,8 @@ const AstroPartStyled = styled.li`
     padding: 0 30px;
   }
 
-  img:hover {
+  img:hover,
+  &.selected img {
     filter: invert(100%);
   }
 

@@ -22,7 +22,7 @@ const TheFactoryPage = (): JSX.Element => {
           </p>
           <p>Build the Astro you desire, the Astro that defines you.</p>
 
-          <button> ASSAMBLE AN ASTRO </button>
+          <button> ASSEMBLE AN ASTRO </button>
         </div>
 
         <div>
