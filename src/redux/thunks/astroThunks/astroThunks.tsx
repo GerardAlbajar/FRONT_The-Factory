@@ -20,8 +20,6 @@ export const loadAstrosThunk = () => async (dispatch: AppDispatch) => {
     const astrosData = [...astroPartData, ...astroData];
 
     dispatch(loadAstrosActionCreator(astrosData));
-
-    toast.success("Astros loaded successfully");
   } catch {
     toast.error("Something went wrong");
   }
@@ -49,17 +47,12 @@ export const loadUserCollectionThunk =
         `/inventory/${id}`
       );
 
-      toast.loading("Loading");
-
       const inventoryData = [
         ...userInventoryData.part,
         ...userInventoryData.perfect,
       ];
 
       dispatch(loadUserCollectionActionCreator(inventoryData));
-
-      toast.dismiss();
-      toast.success("Your collection has been loaded successfully");
     } catch {
       toast.dismiss();
       toast.error("Something went wrong");
@@ -140,7 +133,7 @@ export const createMutantAstroThunk =
   };
 
 export const editMutantAstroThunk =
-  (id: string, mutantAstroUpdated: Astro, idMutantAstro: string) =>
+  (id: string, idMutantAstro: string, mutantAstroUpdated: Astro) =>
   async (dispatch: AppDispatch) => {
     try {
       const { data: userInventoryData } = await apiInterceptor.put(

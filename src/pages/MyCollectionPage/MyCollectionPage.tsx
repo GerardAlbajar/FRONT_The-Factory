@@ -27,9 +27,6 @@ const MyCollectionPage = () => {
         <NavLink className="link" to="/assemble">
           <button> ASSEMBLE A MUTANT ASTRO </button>
         </NavLink>
-        <NavLink className="link" to="/thefactory">
-          <button> EDIT A MUTANT ASTRO </button>
-        </NavLink>
       </div>
       <AstrosList astros={astros} isRemovable />
     </MyCollectionPageStyled>

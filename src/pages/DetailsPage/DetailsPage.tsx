@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import RenderAstroDetails from "../../components/RenderAstroDetails/RenderAstroDetails";
 import RenderPartDetails from "../../components/RenderPartDetails/RenderPartDetails";
+import { blankStateActionCreator } from "../../redux/features/editSlice";
 import { AppDispatch } from "../../redux/store/store";
 import { loadAstroDetail } from "../../redux/thunks/astroThunks/astroThunks";
 import { AstroType, Astro, AstroPart } from "../../types/types";
@@ -30,12 +31,20 @@ const DetailsPage = () => {
 
   const navigate = useNavigate();
 
+  const navigateToEditPage = () => {
+    dispatch(blankStateActionCreator());
+    navigate(`/editmutant/${id}`);
+  };
+
   return (
     <DetailsPageStyled>
       {details ? (
         <div>
           <button className="goback" onClick={() => navigate(-1)}>
             Go back
+          </button>
+          <button className="goback" onClick={navigateToEditPage}>
+            Edit Mutant Astro
           </button>
           {details.type === "Perfect Astro" ? (
             <RenderAstroDetails {...(details as Astro)} />
