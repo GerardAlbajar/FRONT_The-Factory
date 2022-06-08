@@ -11,6 +11,7 @@ const AstroPart = ({
   idRender,
   id,
   showIcon,
+  selected,
   onSelectItem,
 }: AstroPartProps): JSX.Element => {
   const userId = useSelector((state: RootState) => state.user.id);
@@ -22,7 +23,10 @@ const AstroPart = ({
   };
 
   return (
-    <AstroPartStyled onClick={onSelectItem}>
+    <AstroPartStyled
+      className={selected ? "selected" : undefined}
+      onClick={onSelectItem}
+    >
       <ul>
         <li>
           {onSelectItem ? (

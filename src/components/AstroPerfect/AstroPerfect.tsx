@@ -28,6 +28,9 @@ const AstroPerfect = ({
             {parts.rocket ? <img src={parts.rocket.image} alt={name} /> : null}
             {parts.astro ? <img src={parts.astro.image} alt={name} /> : null}
             {parts.naut ? <img src={parts.naut.image} alt={name} /> : null}
+            {!(parts.rocket && parts.astro && parts.naut) ? (
+              <p>Add empty image</p>
+            ) : null}
           </NavLink>
         </li>
         <li>
