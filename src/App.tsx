@@ -8,6 +8,7 @@ import LoggedChecker from "./components/LoggedChecker/LoggedChecker";
 import AssembleMutantPage from "./pages/AssembleMutanPage/AssembleMutantPage";
 import AstrosPage from "./pages/AstrosPage/AstrosPage";
 import DetailsPage from "./pages/DetailsPage/DetailsPage";
+import EditMutantPage from "./pages/EditMutantPage/EditMutantPage";
 import HomePage from "./pages/HomePage/HomePage";
 import LogInPage from "./pages/LogInPage/LogInPage";
 import MyCollectionPage from "./pages/MyCollectionPage/MyCollectionPage";
@@ -74,6 +75,14 @@ const App = (): JSX.Element => {
           element={
             <LoggedChecker>
               <AssembleMutantPage />
+            </LoggedChecker>
+          }
+        />
+        <Route
+          path="/editmutant/:idMutantAstro"
+          element={
+            <LoggedChecker>
+              <EditMutantPage />
             </LoggedChecker>
           }
         />
