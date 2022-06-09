@@ -2,6 +2,11 @@ import styled from "styled-components";
 
 const AstroPerfectStyled = styled.li`
   position: relative;
+
+  :hover {
+    cursor: pointer;
+  }
+
   a {
     text-decoration: none;
     color: #000;
