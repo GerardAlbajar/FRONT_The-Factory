@@ -4,6 +4,7 @@ import { Toaster } from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
+import Header from "./components/HeaderComponent/Header";
 import LoggedChecker from "./components/LoggedChecker/LoggedChecker";
 import AssembleMutantPage from "./pages/AssembleMutanPage/AssembleMutantPage";
 import AstrosPage from "./pages/AstrosPage/AstrosPage";
@@ -42,7 +43,10 @@ const App = (): JSX.Element => {
           path="/thefactory"
           element={
             <LoggedChecker>
-              <TheFactoryPage />
+              <>
+                <Header />
+                <TheFactoryPage />
+              </>
             </LoggedChecker>
           }
         />
@@ -50,7 +54,10 @@ const App = (): JSX.Element => {
           path="/astros"
           element={
             <LoggedChecker>
-              <AstrosPage />
+              <>
+                <Header />
+                <AstrosPage />
+              </>
             </LoggedChecker>
           }
         />
@@ -58,7 +65,10 @@ const App = (): JSX.Element => {
           path="/myinventory"
           element={
             <LoggedChecker>
-              <MyCollectionPage />
+              <>
+                <Header />
+                <MyCollectionPage />
+              </>
             </LoggedChecker>
           }
         />
@@ -66,7 +76,10 @@ const App = (): JSX.Element => {
           path="/details/:astroType/:id"
           element={
             <LoggedChecker>
-              <DetailsPage />
+              <>
+                <Header />
+                <DetailsPage />
+              </>
             </LoggedChecker>
           }
         />
@@ -74,7 +87,10 @@ const App = (): JSX.Element => {
           path="/assemble"
           element={
             <LoggedChecker>
-              <AssembleMutantPage />
+              <>
+                <Header />
+                <AssembleMutantPage />
+              </>
             </LoggedChecker>
           }
         />
@@ -82,7 +98,10 @@ const App = (): JSX.Element => {
           path="/editmutant/:idMutantAstro"
           element={
             <LoggedChecker>
-              <EditMutantPage />
+              <>
+                <Header />
+                <EditMutantPage />
+              </>
             </LoggedChecker>
           }
         />

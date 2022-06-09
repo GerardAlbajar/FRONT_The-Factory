@@ -17,6 +17,7 @@ const SignUpPageStyled = styled.section`
   .info {
     margin-right: 100px;
     header {
+      margin: 0px;
       margin-bottom: 100px;
       img {
         width: 200px;

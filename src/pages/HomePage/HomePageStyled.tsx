@@ -16,6 +16,7 @@ const HomePageStyled = styled.section`
   .info {
     width: 50%;
     header {
+      margin: 0px;
       margin-bottom: 100px;
       img {
         width: 200px;

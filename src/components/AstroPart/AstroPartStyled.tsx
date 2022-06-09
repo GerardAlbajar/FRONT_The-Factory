@@ -3,6 +3,10 @@ import styled from "styled-components";
 const AstroPartStyled = styled.li`
   position: relative;
 
+  :hover {
+    cursor: pointer;
+  }
+
   a {
     text-decoration: none;
     color: #000;

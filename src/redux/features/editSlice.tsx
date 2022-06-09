@@ -1,9 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Astro } from "../../types/types";
-
-interface EditAstroState {
-  astro: Astro;
-}
+import { Astro, EditAstroState } from "../../types/types";
 
 const initialState: EditAstroState = {
   astro: {

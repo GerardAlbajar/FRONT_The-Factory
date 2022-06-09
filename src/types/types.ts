@@ -112,3 +112,7 @@ export interface MutantAstro {
   assembled?: true;
   id?: string;
 }
+
+export interface EditAstroState {
+  astro: Astro;
+}

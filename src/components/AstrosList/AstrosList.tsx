@@ -37,7 +37,7 @@ const AstrosList = ({
       )}
     </AstrosListStyled>
   ) : (
-    <p> No Items Found</p>
+    <p> Waiting for Astros </p>
   );
 };
 
