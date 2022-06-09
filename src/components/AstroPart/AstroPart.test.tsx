@@ -33,6 +33,7 @@ describe("Given the AstroPart Component", () => {
       const expectedButton: HTMLButtonElement = screen.getByRole("img", {
         name: "Delete Button",
       });
+
       userEvent.click(expectedButton);
 
       expect(mockDispatch).toHaveBeenCalled();
