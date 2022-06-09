@@ -6,7 +6,7 @@ const AssembleMutantPageStyled = styled.section`
   text-align: left;
 
   h2 {
-    margin: 100px 0 0 50px;
+    margin: 50px 0 0 50px;
   }
 
   h3 {

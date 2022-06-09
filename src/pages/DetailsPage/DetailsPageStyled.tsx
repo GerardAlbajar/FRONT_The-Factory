@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const DetailsPageStyled = styled.section`
-  padding: 50px;
+  padding: 0 50px;
   background-color: #fff;
   text-align: left;
 
@@ -14,10 +14,6 @@ const DetailsPageStyled = styled.section`
         justify-content: right;
         text-align: right;
         padding: 0 100px;
-
-        .main {
-          margin-top: 90px;
-        }
 
         h2 {
           margin-top: 50px;
@@ -54,7 +50,7 @@ const DetailsPageStyled = styled.section`
     border-radius: 5px;
     border-color: #fff;
     margin: 20px 0 20px 0;
-    width: 100px;
+    width: 200px;
     padding: 10px;
     color: white;
     background-color: #be1522;

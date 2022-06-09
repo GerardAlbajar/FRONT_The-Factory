@@ -1,10 +1,9 @@
-import Header from "../../components/HeaderComponent/Header";
+import { NavLink } from "react-router-dom";
 import TheFactoryPageStyled from "./TheFactoryPageStyled";
 
 const TheFactoryPage = (): JSX.Element => {
   return (
     <TheFactoryPageStyled>
-      <Header />
       <section className="section1">
         <div className="hola">
           <h2>THE FACTORY</h2>
@@ -21,8 +20,9 @@ const TheFactoryPage = (): JSX.Element => {
             potential combinations- which 1,000 Astros the world needs.
           </p>
           <p>Build the Astro you desire, the Astro that defines you.</p>
-
-          <button> ASSEMBLE AN ASTRO </button>
+          <NavLink to="/astros">
+            <button> ASSEMBLE AN ASTRO </button>
+          </NavLink>
         </div>
 
         <div>

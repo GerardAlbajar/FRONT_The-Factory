@@ -6,7 +6,7 @@ const MyCollectionPageStyled = styled.section`
   text-align: left;
 
   h2 {
-    margin: 100px 0 0 50px;
+    margin: 50px 0 0 50px;
   }
 
   ul {

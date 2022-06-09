@@ -43,8 +43,7 @@ const TheFactoryPageStyled = styled.section`
     display: flex;
     justify-content: space-between;
     .perfect {
-      width: 40%;
-
+      width: 45%;
       h2 {
         margin-top: 50px;
       }

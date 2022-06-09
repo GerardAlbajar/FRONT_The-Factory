@@ -40,9 +40,6 @@ const DetailsPage = () => {
     <DetailsPageStyled>
       {details ? (
         <div>
-          <button className="goback" onClick={() => navigate(-1)}>
-            Go back
-          </button>
           <button className="goback" onClick={navigateToEditPage}>
             Edit Mutant Astro
           </button>

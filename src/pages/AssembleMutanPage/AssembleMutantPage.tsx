@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import AstroPerfect from "../../components/AstroPerfect/AstroPerfect";
 import AstrosList from "../../components/AstrosList/AstrosList";
-import Header from "../../components/HeaderComponent/Header";
 import { AppDispatch, RootState } from "../../redux/store/store";
 import {
   createMutantAstroThunk,
@@ -35,9 +34,7 @@ const AssembleMutantPage = () => {
   const dispatch: AppDispatch = useDispatch();
 
   useEffect(() => {
-    if (id) {
-      dispatch(loadUserCollectionThunk(id));
-    }
+    dispatch(loadUserCollectionThunk(id));
   }, [dispatch, id]);
 
   const formInitialState = { mutantName: "" };
@@ -91,7 +88,6 @@ const AssembleMutantPage = () => {
 
   return (
     <AssembleMutantPageStyled>
-      <Header />
       <h2>ASSEMBLE A MUTANT ASTRO</h2>
       <p>
         A Completed Astro is composed of three Component NFTs: an Astro itself,

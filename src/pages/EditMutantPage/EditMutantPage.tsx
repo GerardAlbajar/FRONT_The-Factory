@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import AstroPerfect from "../../components/AstroPerfect/AstroPerfect";
 import AstrosList from "../../components/AstrosList/AstrosList";
-import Header from "../../components/HeaderComponent/Header";
 import { blankStateActionCreator } from "../../redux/features/editSlice";
 import { AppDispatch, RootState } from "../../redux/store/store";
 import {
@@ -94,7 +93,6 @@ const EditMutantPage = () => {
 
   return (
     <EditMutantPageStyled>
-      <Header />
       <h2>EDIT YOUR MUTANT ASTRO</h2>
       <p>
         Select one of each component that you owned and build the Mutant Astro
@@ -126,7 +124,7 @@ const EditMutantPage = () => {
           }}
           type="submit"
         >
-          ASSEMBLE A MUTANT ASTRO
+          EDIT YOUR MUTANT ASTRO
         </button>
       </form>
       <h2>SELECT YOUR COMPONENTS</h2>
