@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import AstrosList from "../../components/AstrosList/AstrosList";
 import { AppDispatch, RootState } from "../../redux/store/store";
 import { loadAstrosThunk } from "../../redux/thunks/astroThunks/astroThunks";
+import { AstroType } from "../../types/types";
 import AstrosPageStyled from "./AstrosPageStyled";
 
 const AstrosPage = () => {
@@ -14,7 +15,13 @@ const AstrosPage = () => {
     dispatch(loadAstrosThunk());
   }, [dispatch]);
 
-  const [filterFactory, setfilterFactory] = useState(astros);
+  const initialState: AstroType[] = [];
+
+  const [filterFactory, setfilterFactory] = useState(initialState);
+
+  useEffect(() => {
+    setfilterFactory(astros);
+  }, [astros]);
 
   const filterByType = (string: string) => {
     const AstrosFiltered = astros.filter((astro) => astro.type === string);
