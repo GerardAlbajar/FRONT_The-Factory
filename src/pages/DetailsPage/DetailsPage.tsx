@@ -40,9 +40,15 @@ const DetailsPage = () => {
     <DetailsPageStyled>
       {details ? (
         <div>
-          <button className="goback" onClick={navigateToEditPage}>
-            Edit Mutant Astro
-          </button>
+          {details.type === "Perfect Astro" ? (
+            <button className="goback" onClick={navigateToEditPage}>
+              Edit Mutant Astro
+            </button>
+          ) : (
+            <button className="goback" onClick={() => navigate(-1)}>
+              Go Back
+            </button>
+          )}
           {details.type === "Perfect Astro" ? (
             <RenderAstroDetails {...(details as Astro)} />
           ) : (
