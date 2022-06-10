@@ -33,6 +33,7 @@ const AstrosPageStyled = styled.section`
     button:hover {
       color: white;
       background-color: #000;
+      cursor: pointer;
     }
   }
 `;
