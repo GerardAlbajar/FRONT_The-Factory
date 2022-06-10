@@ -5,8 +5,8 @@ import AstrosPage from "./AstrosPage";
 const { render, screen } = require("@testing-library/react");
 
 describe("Given a HomePage Component", () => {
-  describe("When it's invoked)", () => {
-    test("Then it should render four number of headings", () => {
+  describe("When it's invoked", () => {
+    test("Then it should render one number of headings", () => {
       render(
         <Provider store={store}>
           <BrowserRouter>
