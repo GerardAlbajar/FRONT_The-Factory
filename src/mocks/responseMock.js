@@ -68,66 +68,6 @@ const responseMock = {
         "https://firebasestorage.googleapis.com/v0/b/astro-factory.appspot.com/o/REACT_ASTRO_2.png?alt=media&token=7e1ef3af-b744-4d81-9c44-20346c04977e",
       id: "629e513c85d60f0e2f74ec3d",
     },
-    {
-      idRender: "#812736SJDGHB",
-      name: "REACT NAUT",
-      type: "Naut",
-      framework: "React",
-      assembled: false,
-      image:
-        "https://firebasestorage.googleapis.com/v0/b/astro-factory.appspot.com/o/REACT_NAUT.png?alt=media&token=b4ca79a2-7a99-4674-93d2-78a2bba4322f",
-      partimage:
-        "https://firebasestorage.googleapis.com/v0/b/astro-factory.appspot.com/o/REACT_NAUT_2.png?alt=media&token=b7217d8c-f46c-422b-a2a4-827f89116a00",
-      id: "629e513c85d60f0e2f74ec3e",
-    },
-    {
-      idRender: "#212736SJDGHA",
-      name: "JQUERY ASTRO",
-      type: "Astro",
-      framework: "JQuery",
-      assembled: false,
-      image:
-        "https://firebasestorage.googleapis.com/v0/b/astro-factory.appspot.com/o/JQUERY_ASTRO.png?alt=media&token=5314d5ea-94ef-41ae-8238-5e38879ffd08",
-      partimage:
-        "https://firebasestorage.googleapis.com/v0/b/astro-factory.appspot.com/o/JQUERY_ASTRO_2.png?alt=media&token=dcc70891-716c-4617-be9f-cff8adfd803a",
-      id: "629e513c85d60f0e2f74ec46",
-    },
-    {
-      idRender: "#112736SJDGHB",
-      name: "ANGULAR NAUT",
-      type: "Naut",
-      framework: "Angular",
-      assembled: false,
-      image:
-        "https://firebasestorage.googleapis.com/v0/b/astro-factory.appspot.com/o/ANGULAR_NAUT.png?alt=media&token=bea70d12-3e3f-4dcf-aac6-d5303d0bdb23",
-      partimage:
-        "https://firebasestorage.googleapis.com/v0/b/astro-factory.appspot.com/o/ANGULAR_NAUT_2.png?alt=media&token=2adf0349-1c43-4880-a10e-a205a4744971",
-      id: "629e513c85d60f0e2f74ec44",
-    },
-    {
-      idRender: "#112736SJDGHC",
-      name: "ANGULAR ROCKET",
-      type: "Rocket",
-      framework: "Angular",
-      assembled: false,
-      image:
-        "https://firebasestorage.googleapis.com/v0/b/astro-factory.appspot.com/o/ANGULAR_ROCKET.png?alt=media&token=9a7568ac-361a-43c9-8941-d310281f54e4",
-      partimage:
-        "https://firebasestorage.googleapis.com/v0/b/astro-factory.appspot.com/o/ANGULAR_ROCKET_2.png?alt=media&token=4d732a01-6f67-4793-8a10-655659f39937",
-      id: "629e513c85d60f0e2f74ec45",
-    },
-    {
-      idRender: "#912736SJDGHA",
-      name: "VUE ASTRO",
-      type: "Astro",
-      framework: "Vue",
-      assembled: false,
-      image:
-        "https://firebasestorage.googleapis.com/v0/b/astro-factory.appspot.com/o/VUE_ASTRO.png?alt=media&token=7cef6c2a-6169-470c-80b7-10e2a2a948f8",
-      partimage:
-        "https://firebasestorage.googleapis.com/v0/b/astro-factory.appspot.com/o/VUE_ASTRO_2.png?alt=media&token=38211c53-319e-44d3-a007-cdecb9853c91",
-      id: "629e513c85d60f0e2f74ec40",
-    },
   ],
 };
 
