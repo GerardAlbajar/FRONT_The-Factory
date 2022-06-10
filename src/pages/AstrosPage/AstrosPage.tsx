@@ -17,6 +17,16 @@ const AstrosPage = () => {
   return (
     <AstrosPageStyled>
       <h2>ASTROS AND COMPONENTS</h2>
+      <div className="buttons">
+        <button> COMPONENTS </button>
+        <button> ASTROS </button>
+      </div>
+      <div className="buttons">
+        <button> REACT </button>
+        <button> VUE </button>
+        <button> ANGULAR </button>
+        <button> JQUERY </button>
+      </div>
       <AstrosList astros={astros} />
     </AstrosPageStyled>
   );
