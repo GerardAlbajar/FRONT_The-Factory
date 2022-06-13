@@ -13,6 +13,7 @@ import EditMutantPage from "./pages/EditMutantPage/EditMutantPage";
 import HomePage from "./pages/HomePage/HomePage";
 import LogInPage from "./pages/LogInPage/LogInPage";
 import MyCollectionPage from "./pages/MyCollectionPage/MyCollectionPage";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import SignUpPage from "./pages/SignUpPage/SignUpPage";
 import TheFactoryPage from "./pages/TheFactoryPage/TheFactoryPage";
 import { logInActionCreator } from "./redux/features/userSlice";
@@ -36,6 +37,7 @@ const App = (): JSX.Element => {
     <div className="App">
       <Routes>
         <Route path="/" element={<Navigate to="/home" />} />
+        <Route path="*" element={<NotFoundPage />} />
         <Route path="/home" element={<HomePage />} />
         <Route path="/login" element={<LogInPage />} />
         <Route path="/register" element={<SignUpPage />} />
