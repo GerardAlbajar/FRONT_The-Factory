@@ -1,17 +1,10 @@
 import styled from "styled-components";
 
 const LogInFormStyled = styled.section`
-  background-color: #000;
-  width: 600px;
-  padding: 30px;
-  border-radius: 10px;
-  text-align: left;
-  border-width: 1px;
-  border-color: #fff;
-
   h2 {
     color: #fff;
-    margin-bottom: 40px;
+    margin-top: 0;
+    margin-bottom: 30px;
   }
 
   label {

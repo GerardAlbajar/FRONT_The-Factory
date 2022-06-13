@@ -39,10 +39,10 @@ export interface AstroPart {
 export interface Astro {
   parts: Parts;
   id: string;
-  idRender: string;
+  idRender?: string;
   name: string;
   type: string;
-  flighthistory?: number;
+  flighthistory?: boolean;
   stickers?: number;
   framework: string;
   assembled: boolean;
@@ -58,7 +58,7 @@ export interface LoggedCheckerProps {
 
 export interface Part {
   id: string;
-  idRender: string;
+  idRender?: string;
   image: string;
 }
 
@@ -72,7 +72,7 @@ export interface AstroPerfectProps {
   parts: Parts;
   name: string;
   id: string;
-  idRender: string;
+  idRender?: string;
   showIcon: boolean;
 }
 
@@ -106,13 +106,26 @@ export interface MutantAstro {
   idRender?: string;
   name?: string;
   type?: string;
-  flighthistory?: 0;
-  stickers?: 1;
-  framework?: "Mutant Astro";
-  assembled?: true;
+  flighthistory?: boolean;
+  stickers?: number;
+  framework?: string;
+  assembled?: boolean;
   id?: string;
 }
 
 export interface EditAstroState {
   astro: Astro;
+}
+
+export interface User {
+  name: string;
+  mail: string;
+  username: string;
+  id: string;
+  inventory: Inventory;
+}
+
+export interface Inventory {
+  perfect: Astro[];
+  part: AstroPart[];
 }

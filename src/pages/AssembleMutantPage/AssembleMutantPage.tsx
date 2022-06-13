@@ -68,7 +68,7 @@ const AssembleMutantPage = () => {
 
   const newMutantAstro: Astro = {
     assembled: true,
-    flighthistory: 0,
+    flighthistory: false,
     framework: "Mutant Astro",
     id: "",
     idRender: `#${randomIdGenerator.toString()}`,

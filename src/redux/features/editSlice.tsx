@@ -7,7 +7,7 @@ const initialState: EditAstroState = {
     idRender: "",
     name: "",
     type: "",
-    flighthistory: 0,
+    flighthistory: false,
     stickers: 1,
     framework: "",
     assembled: false,

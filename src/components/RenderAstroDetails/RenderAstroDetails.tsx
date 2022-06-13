@@ -7,7 +7,7 @@ const RenderAstroDetails = ({
   parts,
   name,
   type,
-  flighthistory = 0,
+  flighthistory = false,
   stickers = 1,
   framework,
   idRender,

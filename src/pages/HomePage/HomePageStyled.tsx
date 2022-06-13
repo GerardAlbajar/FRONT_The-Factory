@@ -6,22 +6,26 @@ const HomePageStyled = styled.section`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  height: 100vh;
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  overflow: auto;
 
   padding: 50px;
   text-align: left;
 
   color: #fff;
 
+  header {
+    margin: 0px;
+    margin-bottom: 100px;
+    img {
+      width: 200px;
+    }
+  }
+
   .info {
     width: 50%;
-    header {
-      margin: 0px;
-      margin-bottom: 100px;
-      img {
-        width: 200px;
-      }
-    }
 
     h2 {
       margin-top: 0;
@@ -29,26 +33,44 @@ const HomePageStyled = styled.section`
     }
 
     p {
-      margin: 40px 0 40px 0;
-      padding-right: 100px;
+      margin: 40px 0;
+    }
+
+    .buttons-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      margin: -10px -6px;
+      a {
+        margin: 0 6px;
+      }
     }
 
     button {
       border-width: 1px;
       border-radius: 5px;
       border-color: #fff;
-      margin: 0 50px 0 0;
-      padding: 10px 70px 10px 70px;
+      padding: 10px 60px;
       color: white;
       background-color: #be1522;
       cursor: pointer;
       font-family: "Courier New", Courier, monospace;
       font-weight: bolder;
+      white-space: nowrap;
+      margin-top: 10px;
     }
 
     button:hover {
       color: white;
       background-color: #000;
+    }
+  }
+  @media (max-width: 768px) {
+    .info {
+      width: 100%;
+
+      .buttons-wrapper {
+        justify-content: center;
+      }
     }
   }
 `;
