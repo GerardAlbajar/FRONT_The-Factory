@@ -17,7 +17,7 @@ jest.mock("react-redux", () => ({
 
 describe("Given a LoggedChecked function", () => {
   describe("When it's invoked", () => {
-    test("Then it should navigarte to login enpoint when user is not logged", () => {
+    test("Then it should navigate to login enpoint when user is not logged", () => {
       render(
         <LoggedChecker>
           <h1>Hello</h1>

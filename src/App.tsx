@@ -6,7 +6,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Header from "./components/HeaderComponent/Header";
 import LoggedChecker from "./components/LoggedChecker/LoggedChecker";
-import AssembleMutantPage from "./pages/AssembleMutanPage/AssembleMutantPage";
+import AssembleMutantPage from "./pages/AssembleMutantPage/AssembleMutantPage";
 import AstrosPage from "./pages/AstrosPage/AstrosPage";
 import DetailsPage from "./pages/DetailsPage/DetailsPage";
 import EditMutantPage from "./pages/EditMutantPage/EditMutantPage";

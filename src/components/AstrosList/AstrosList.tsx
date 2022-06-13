@@ -1,3 +1,5 @@
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/store/store";
 import {
   Astro,
   AstroPart as IAstroPart,
@@ -6,6 +8,7 @@ import {
 } from "../../types/types";
 import AstroPart from "../AstroPart/AstroPart";
 import AstroPerfect from "../AstroPerfect/AstroPerfect";
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import AstrosListStyled from "./AstrosListStyled";
 
 const AstrosList = ({
@@ -14,7 +17,11 @@ const AstrosList = ({
   selectedPartId,
   onSelectItem,
 }: AstrosListProps) => {
-  return astros.length ? (
+  const loading = useSelector((store: RootState) => store.ui.loaded);
+
+  return loading ? (
+    <LoadingSpinner />
+  ) : astros.length ? (
     <AstrosListStyled>
       {astros.map((astro: AstroType) =>
         astro.type === "Perfect Astro" ? (
@@ -37,7 +44,7 @@ const AstrosList = ({
       )}
     </AstrosListStyled>
   ) : (
-    <p> Waiting for Astros </p>
+    <p> No Astros Found </p>
   );
 };
 

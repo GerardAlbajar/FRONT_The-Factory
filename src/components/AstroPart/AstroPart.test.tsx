@@ -39,4 +39,27 @@ describe("Given the AstroPart Component", () => {
       expect(mockDispatch).toHaveBeenCalled();
     });
   });
+
+  describe("LAKSJDLKSDAJ", () => {
+    test("Then it should call the dispatch action with its credentials", () => {
+      render(
+        <Provider store={store}>
+          <BrowserRouter>
+            <AstroPart
+              name="hola"
+              id="hola"
+              idRender="hola"
+              image="hola"
+              showIcon={false}
+              selected
+              onSelectItem={() => null}
+              key="hola"
+            />
+          </BrowserRouter>
+        </Provider>
+      );
+      const displayHeader = screen.getAllByRole("listitem");
+      expect(displayHeader.length).toBe(4);
+    });
+  });
 });

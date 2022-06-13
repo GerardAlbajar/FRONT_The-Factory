@@ -1,7 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
-import { mockAstroParts } from "../../mocks/astroParts";
 import { mockAstros } from "../../mocks/astros";
 import store from "../../redux/store/store";
 import AstrosList from "./AstrosList";
@@ -15,25 +14,6 @@ describe("Given a RobotList component function", () => {
   describe("When invoked with a list of 2 astros", () => {
     test("Then it should render 8 li elements", () => {
       const astros: any = mockAstros;
-      const expectedNumberOfAstros = 8;
-
-      render(
-        <BrowserRouter>
-          <Provider store={store}>
-            <AstrosList astros={astros} />
-          </Provider>
-        </BrowserRouter>
-      );
-
-      const liElements = screen.getAllByRole("listitem");
-
-      expect(liElements).toHaveLength(expectedNumberOfAstros);
-    });
-  });
-
-  describe("When invoked with a list of 2 astroParts", () => {
-    test("Then it should render 8 li elements", () => {
-      const astros: any = mockAstroParts;
       const expectedNumberOfAstros = 8;
 
       render(

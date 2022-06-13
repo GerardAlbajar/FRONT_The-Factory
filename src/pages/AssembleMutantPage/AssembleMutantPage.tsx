@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import AstroPerfect from "../../components/AstroPerfect/AstroPerfect";
 import AstrosList from "../../components/AstrosList/AstrosList";
 import { AppDispatch, RootState } from "../../redux/store/store";
@@ -10,18 +11,20 @@ import {
 import { Astro, AstroPart, MutantAstro, MyItems } from "../../types/types";
 import AssembleMutantPageStyled from "./AssembleMutantPageStyled";
 
-const AssembleMutantPage = () => {
-  const initialUserItems: MyItems = {
-    astros: [],
-    nauts: [],
-    rockets: [],
-  };
+const initialUserItems: MyItems = {
+  astros: [],
+  nauts: [],
+  rockets: [],
+};
 
-  const initialMutantAstro: MutantAstro = {
-    astro: undefined,
-    naut: undefined,
-    rocket: undefined,
-  };
+const initialMutantAstro: MutantAstro = {
+  astro: undefined,
+  naut: undefined,
+  rocket: undefined,
+};
+
+const AssembleMutantPage = () => {
+  const navigate = useNavigate();
 
   const [myItems, setMyItems] = useState<MyItems>(initialUserItems);
 
@@ -30,6 +33,7 @@ const AssembleMutantPage = () => {
 
   const id = useSelector((state: RootState) => state.user.id);
   const astros = useSelector((state: RootState) => state.astro);
+  const loading = useSelector((state: RootState) => state.ui.loaded);
 
   const dispatch: AppDispatch = useDispatch();
 
@@ -48,7 +52,7 @@ const AssembleMutantPage = () => {
     });
   };
 
-  const disabledIf = formData.mutantName === "";
+  const disabledIf = formData.mutantName === "" || loading;
 
   const randomIdGenerator = Date.now();
 
@@ -81,7 +85,7 @@ const AssembleMutantPage = () => {
   const assembleMutantAstro = (event: { preventDefault: () => void }) => {
     event.preventDefault();
 
-    dispatch(createMutantAstroThunk(id, newMutantAstro));
+    dispatch(createMutantAstroThunk(id, newMutantAstro, navigate));
 
     setFormData(formInitialState);
   };
@@ -159,7 +163,7 @@ const AssembleMutantPage = () => {
           }}
           type="submit"
         >
-          ASSEMBLE A MUTANT ASTRO
+          {loading ? "ASSEMBLING..." : "ASSEMBLE A MUTANT ASTRO"}
         </button>
       </form>
     </AssembleMutantPageStyled>

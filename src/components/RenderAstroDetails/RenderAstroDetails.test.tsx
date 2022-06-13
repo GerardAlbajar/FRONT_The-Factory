@@ -23,9 +23,7 @@ describe("Given the RenderAstroDetails Component", () => {
               id="hola"
               idRender="hola"
               assembled={false}
-              flighthistory={1}
               framework="hola"
-              stickers={1}
               type="hola"
               key="hola"
               parts={{
@@ -44,6 +42,38 @@ describe("Given the RenderAstroDetails Component", () => {
                   idRender: "hola",
                   image: "hola",
                 },
+              }}
+            />
+          </BrowserRouter>
+        </Provider>
+      );
+
+      const expectedButton: HTMLButtonElement = screen.getByRole("button", {
+        name: "Add Item",
+      });
+      userEvent.click(expectedButton);
+
+      expect(mockDispatch).toHaveBeenCalled();
+    });
+
+    test("KASJDLKASD", () => {
+      render(
+        <Provider store={store}>
+          <BrowserRouter>
+            <RenderAstroDetails
+              name="hola"
+              id="hola"
+              idRender="hola"
+              assembled={false}
+              flighthistory={1}
+              framework="hola"
+              stickers={1}
+              type="hola"
+              key="hola"
+              parts={{
+                rocket: undefined,
+                astro: undefined,
+                naut: undefined,
               }}
             />
           </BrowserRouter>
