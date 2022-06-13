@@ -32,7 +32,7 @@ const Header = () => {
             <NavLink to="/astros">Astros</NavLink>
           </li>
           <li>
-            <NavLink to="/thefactory">Road Map</NavLink>
+            <NavLink to="/explore">Explore</NavLink>
           </li>
           <li>
             <NavLink to="/myinventory">Your Collection</NavLink>
