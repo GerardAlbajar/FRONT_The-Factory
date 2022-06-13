@@ -42,8 +42,8 @@ export interface Astro {
   idRender: string;
   name: string;
   type: string;
-  flighthistory: number;
-  stickers: number;
+  flighthistory?: number;
+  stickers?: number;
   framework: string;
   assembled: boolean;
 }

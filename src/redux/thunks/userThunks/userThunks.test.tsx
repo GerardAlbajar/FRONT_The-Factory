@@ -1,3 +1,4 @@
+import axios from "axios";
 import { server } from "../mocks/server/server";
 import { logInUserThunk, signUpUserThunk } from "./userThunks";
 
@@ -40,6 +41,50 @@ describe("Given the loginUserThunk", () => {
       await thunk(dispatch);
 
       expect(dispatch).toHaveBeenCalled();
+    });
+  });
+
+  describe("When invoked with a valid user and axios throws an error", () => {
+    test("Then it should not call the dispatch", async () => {
+      const dispatch = jest.fn();
+      const navigate = jest.fn();
+
+      jest.spyOn(Storage.prototype, "setItem").mockReturnValue();
+      axios.post = jest.fn().mockRejectedValue({});
+
+      const thunk = logInUserThunk(
+        {
+          username: "hola",
+          password: "",
+        },
+        navigate
+      );
+      await thunk(dispatch);
+
+      expect(dispatch).not.toHaveBeenCalled();
+    });
+  });
+
+  describe("When invoked with a valid user and axios throws an error while Signing Up", () => {
+    test("Then it should not call the dispatch", async () => {
+      const dispatch = jest.fn();
+      const navigate = jest.fn();
+
+      jest.spyOn(Storage.prototype, "setItem").mockReturnValue();
+      axios.post = jest.fn().mockRejectedValue({});
+
+      const thunk = signUpUserThunk(
+        {
+          name: "",
+          mail: "test",
+          username: "",
+          password: "test",
+        },
+        navigate
+      );
+      await thunk(dispatch);
+
+      expect(dispatch).not.toHaveBeenCalled();
     });
   });
 });
