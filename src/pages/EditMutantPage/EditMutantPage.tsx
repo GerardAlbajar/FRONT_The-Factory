@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import AstroPerfect from "../../components/AstroPerfect/AstroPerfect";
 import AstrosList from "../../components/AstrosList/AstrosList";
 import { blankStateActionCreator } from "../../redux/features/editSlice";
@@ -15,6 +15,7 @@ import EditMutantPageStyled from "./EditMutantPageStyled";
 
 const EditMutantPage = () => {
   const { idMutantAstro } = useParams();
+  const navigate = useNavigate();
   const id = useSelector((state: RootState) => state.user.id);
 
   const dispatch: AppDispatch = useDispatch();
@@ -85,7 +86,9 @@ const EditMutantPage = () => {
   const editMutantAstro = (event: { preventDefault: () => void }) => {
     event.preventDefault();
 
-    dispatch(editMutantAstroThunk(id, mutantAstro.id, newMutantAstro));
+    dispatch(
+      editMutantAstroThunk(id, mutantAstro.id, newMutantAstro, navigate)
+    );
 
     setFormData({ mutantName: "" });
     dispatch(blankStateActionCreator());

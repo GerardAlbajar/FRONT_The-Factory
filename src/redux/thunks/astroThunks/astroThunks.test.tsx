@@ -148,9 +148,12 @@ describe("Given a createMutantAstroThunk function", () => {
         },
       };
 
+      const navigate = jest.fn();
+
       const thunk = createMutantAstroThunk(
         "6294eeb64326e4549274b515",
-        mutantAstro
+        mutantAstro,
+        navigate
       );
 
       await thunk(dispatch);
@@ -193,10 +196,13 @@ describe("Given a editMutantAstroThunk function", () => {
         },
       };
 
+      const navigate = jest.fn();
+
       const thunk = editMutantAstroThunk(
         "6294eeb64326e4549274b515",
         "629e514d85d60f0e2f74ec4b",
-        mutantAstro
+        mutantAstro,
+        navigate
       );
 
       await thunk(dispatch);

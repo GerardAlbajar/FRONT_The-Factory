@@ -4,6 +4,10 @@ import { useNavigate, useParams } from "react-router-dom";
 import RenderAstroDetails from "../../components/RenderAstroDetails/RenderAstroDetails";
 import RenderPartDetails from "../../components/RenderPartDetails/RenderPartDetails";
 import { blankStateActionCreator } from "../../redux/features/editSlice";
+import {
+  loadedOffActionCreator,
+  loadedOnActionCreator,
+} from "../../redux/features/uiSlice";
 import { AppDispatch } from "../../redux/store/store";
 import { loadAstroDetail } from "../../redux/thunks/astroThunks/astroThunks";
 import { AstroType, Astro, AstroPart } from "../../types/types";
@@ -18,10 +22,15 @@ const DetailsPage = () => {
   useEffect(() => {
     if (id && astroType) {
       const getData = async () => {
+        dispatch(loadedOnActionCreator());
+
         const astroDetails: AstroType = await loadAstroDetail(
           astroType as "astroparts" | "astros",
           id
         );
+
+        dispatch(loadedOffActionCreator());
+
         setDetails(astroDetails);
       };
 
