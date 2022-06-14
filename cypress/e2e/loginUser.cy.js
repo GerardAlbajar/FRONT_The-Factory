@@ -70,11 +70,11 @@ describe("Given the The Astro Factory webpage", () => {
       cy.get("button").contains("VUE").click();
 
       cy.get("ul").should("contain.text", "VUE ROCKET");
-      cy.get("li").contains("VUE ROCKET").click();
+      // cy.get("li").contains("VUE ROCKET").click();
 
-      cy.visit(
-        "https://gerard-albajar-front-final-project-202204-bcn.netlify.app/details/astroparts/629e513c85d60f0e2f74ec42"
-      );
+      // cy.visit(
+      //   "https://gerard-albajar-front-final-project-202204-bcn.netlify.app/details/astroparts/629e513c85d60f0e2f74ec42"
+      // );
 
       // cy.get("button").contains("Add Item").click();
 
