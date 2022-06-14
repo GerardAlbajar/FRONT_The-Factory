@@ -117,7 +117,7 @@ export interface EditAstroState {
   astro: Astro;
 }
 
-export interface User {
+export interface IUser {
   name: string;
   mail: string;
   username: string;
@@ -128,4 +128,16 @@ export interface User {
 export interface Inventory {
   perfect: Astro[];
   part: AstroPart[];
+}
+
+export interface UserProps {
+  name: string;
+  mail: string;
+  username: string;
+  id: string;
+  inventory: Inventory;
+}
+
+export interface UserListProps {
+  users: IUser[];
 }

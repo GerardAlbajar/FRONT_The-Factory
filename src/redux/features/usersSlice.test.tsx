@@ -1,12 +1,12 @@
-import { User } from "../../types/types";
+import { IUser } from "../../types/types";
 import usersReducer, { loadUsersActionCreator } from "./usersSlice";
 
 describe("Given a usersSlice reducer", () => {
   describe("When it receives a list of Users", () => {
     test("Then it should return/update the new state with this list", () => {
-      const initialUsers: User[] = [];
+      const initialUsers: IUser[] = [];
 
-      const expectedUsers: User[] = [
+      const expectedUsers: IUser[] = [
         {
           inventory: {
             perfect: [
