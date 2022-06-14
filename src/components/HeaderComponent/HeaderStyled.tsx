@@ -72,6 +72,12 @@ const HeaderStyled = styled.header`
     margin-top: 0px;
     transform: rotate(-405deg);
   }
+
+  .selected {
+    font-weight: bold;
+    color: #be1522;
+  }
+
   @media (max-width: 768px) {
     .menu-button-container {
       display: flex;
