@@ -16,6 +16,7 @@ import MyCollectionPage from "./pages/MyCollectionPage/MyCollectionPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import SignUpPage from "./pages/SignUpPage/SignUpPage";
 import TheFactoryPage from "./pages/TheFactoryPage/TheFactoryPage";
+import UsersPage from "./pages/UsersPage/UsersPage";
 import { logInActionCreator } from "./redux/features/userSlice";
 import { AppDispatch, RootState } from "./redux/store/store";
 import { UserInfo } from "./types/types";
@@ -103,6 +104,17 @@ const App = (): JSX.Element => {
               <>
                 <Header />
                 <EditMutantPage />
+              </>
+            </LoggedChecker>
+          }
+        />
+        <Route
+          path="/explore"
+          element={
+            <LoggedChecker>
+              <>
+                <Header />
+                <UsersPage />
               </>
             </LoggedChecker>
           }
