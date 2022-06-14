@@ -12,6 +12,8 @@ const Header = () => {
     dispatch(logOutActionCreator());
   };
 
+  const path = window.location.pathname;
+
   return (
     <HeaderStyled>
       <nav className="top-nav">
@@ -26,16 +28,36 @@ const Header = () => {
         </label>
         <ul className="menu">
           <li>
-            <NavLink to="/thefactory">The Factory</NavLink>
+            <NavLink
+              to="/thefactory"
+              className={path.includes("/thefactory") ? "selected" : undefined}
+            >
+              The Factory
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/astros">Astros</NavLink>
+            <NavLink
+              to="/astros"
+              className={path.includes("/astros") ? "selected" : undefined}
+            >
+              Astros
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/explore">Explore</NavLink>
+            <NavLink
+              to="/explore"
+              className={path.includes("/explore") ? "selected" : undefined}
+            >
+              Explore
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/myinventory">Your Collection</NavLink>
+            <NavLink
+              to="/myinventory"
+              className={path.includes("/myinventory") ? "selected" : undefined}
+            >
+              Your Collection
+            </NavLink>
           </li>
           <li>
             <NavLink to="/home" onClick={logOutUser}>
