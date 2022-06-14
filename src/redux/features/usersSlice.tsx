@@ -1,13 +1,13 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { User } from "../../types/types";
+import { IUser } from "../../types/types";
 
-const initialState: User[] = [];
+const initialState: IUser[] = [];
 
 const usersSlice = createSlice({
   name: "users",
   initialState,
   reducers: {
-    loadUsers: (users, action: PayloadAction<User[]>) => [...action.payload],
+    loadUsers: (users, action: PayloadAction<IUser[]>) => [...action.payload],
   },
 });
 
