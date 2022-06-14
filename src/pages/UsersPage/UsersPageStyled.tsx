@@ -16,6 +16,20 @@ const UsersPageStyled = styled.section`
   p {
     margin: 20px 50px;
   }
+
+  div {
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      font-weight: bold;
+    }
+
+    p:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
 `;
 
 export default UsersPageStyled;
