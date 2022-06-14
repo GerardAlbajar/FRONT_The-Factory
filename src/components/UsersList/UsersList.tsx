@@ -13,7 +13,7 @@ const UsersList = ({ users }: UserListProps) => {
   ) : users.length ? (
     <UsersListStyled>
       {users.map((user: IUser) => (
-        <User {...(user as IUser)} key={user.username} />
+        <User {...(user as IUser)} key={user.id} />
       ))}
     </UsersListStyled>
   ) : (
