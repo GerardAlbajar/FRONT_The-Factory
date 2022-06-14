@@ -1,7 +1,13 @@
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { blankStateActionCreator } from "../../redux/features/editSlice";
 import { AppDispatch, RootState } from "../../redux/store/store";
-import { addInventoryPartThunk } from "../../redux/thunks/astroThunks/astroThunks";
-import { Astro } from "../../types/types";
+import {
+  addInventoryPartThunk,
+  loadUserCollectionThunk,
+} from "../../redux/thunks/astroThunks/astroThunks";
+import { Astro, AstroType } from "../../types/types";
 
 const RenderAstroDetails = ({
   parts,
@@ -14,10 +20,30 @@ const RenderAstroDetails = ({
   id,
 }: Astro) => {
   const userId = useSelector((state: RootState) => state.user.id);
+
   const dispatch: AppDispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(loadUserCollectionThunk(userId));
+  }, [dispatch, userId]);
+
+  const userInventory = useSelector((state: RootState) => state.astro);
+
+  const getInventoryId = userInventory.map((astro: AstroType) => astro.id);
+
+  const userInventoryChecker = getInventoryId.includes(id);
+
+  const navigate = useNavigate();
 
   const addAstroItem = (id: string) => {
     dispatch(addInventoryPartThunk(userId, "perfect", id));
+
+    navigate(-1);
+  };
+
+  const navigateToEditPage = () => {
+    dispatch(blankStateActionCreator());
+    navigate(`/editmutant/${id}`);
   };
 
   return (
@@ -45,7 +71,11 @@ const RenderAstroDetails = ({
             <p>{stickers}</p>
           </li>
         </ul>
-        <button onClick={() => addAstroItem(id)}>Add Item</button>
+        {userInventoryChecker ? (
+          <button onClick={navigateToEditPage}>Edit Item</button>
+        ) : (
+          <button onClick={() => addAstroItem(id)}>Add Item</button>
+        )}
       </div>
       <div className="astro">
         {parts.rocket ? <img src={parts.rocket.image} alt={name} /> : null}
