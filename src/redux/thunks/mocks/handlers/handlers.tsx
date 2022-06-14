@@ -117,4 +117,8 @@ export const handlers = [
       return res(ctx.status(200), ctx.json(responseMock));
     }
   ),
+
+  rest.get(`${process.env.REACT_APP_API_URL}users`, (_, res, ctx) =>
+    res(ctx.status(200), ctx.json([]))
+  ),
 ];
