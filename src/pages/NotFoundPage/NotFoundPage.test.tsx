@@ -1,5 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
 import NotFoundPage from "./NotFoundPage";
+import TestRenderer from "react-test-renderer";
 const { render, screen } = require("@testing-library/react");
 
 describe("Given a HomePage Component", () => {
@@ -16,6 +17,16 @@ describe("Given a HomePage Component", () => {
       const selectedText = screen.getByText(expectedText);
 
       expect(selectedText).toBeInTheDocument();
+    });
+
+    test("Then it should always match with this snapshot", () => {
+      const NotFoundPageRender = TestRenderer.create(
+        <BrowserRouter>
+          <NotFoundPage />
+        </BrowserRouter>
+      );
+
+      expect(NotFoundPageRender).toMatchSnapshot();
     });
   });
 });

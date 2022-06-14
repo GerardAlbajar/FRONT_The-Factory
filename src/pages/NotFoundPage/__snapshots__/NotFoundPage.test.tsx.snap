@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given a HomePage Component When it's invoked) Then it should always match with this snapshot 1`] = `
+<section
+  className="sc-bczRLJ kvfDHZ"
+>
+  <header>
+    <a
+      className=""
+      href="/home"
+      onClick={[Function]}
+    >
+      <img
+        alt="Astro Factory Logo"
+        src="images/logo.png"
+      />
+    </a>
+  </header>
+  <p>
+    Page Not Found
+  </p>
+</section>
+`;
