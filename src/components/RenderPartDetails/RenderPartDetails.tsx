@@ -21,7 +21,9 @@ const RenderPartDetails = ({
   const dispatch: AppDispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(loadUserCollectionThunk(userId));
+    if (userId) {
+      dispatch(loadUserCollectionThunk(userId));
+    }
   }, [dispatch, userId]);
 
   const userInventory = useSelector((state: RootState) => state.astro);

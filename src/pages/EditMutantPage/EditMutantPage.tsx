@@ -35,7 +35,7 @@ const EditMutantPage = () => {
   const [formData, setFormData] = useState({ mutantName: "" });
 
   useEffect(() => {
-    if (idMutantAstro) {
+    if (idMutantAstro && id) {
       dispatch(loadEditAstroThunk(idMutantAstro));
       dispatch(loadUserCollectionThunk(id));
     }

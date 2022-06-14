@@ -13,7 +13,9 @@ const MyCollectionPage = () => {
   const dispatch: AppDispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(loadUserCollectionThunk(id));
+    if (id) {
+      dispatch(loadUserCollectionThunk(id));
+    }
   }, [dispatch, id]);
 
   return (
