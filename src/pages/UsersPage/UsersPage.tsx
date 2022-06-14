@@ -54,8 +54,12 @@ const UsersPage = () => {
         inventory to assemble 1,000 Completed Rockets.
       </p>
       <div>
-        <p onClick={previousPage}>Previous User Collection</p>
-        <p onClick={nextPage}>Next User Collection</p>
+        <button onClick={previousPage} disabled={index < 1}>
+          Previous User Collection
+        </button>
+        <button onClick={nextPage} disabled={index === users.length - 1}>
+          Next User Collection
+        </button>
       </div>
       <UsersList users={page} />
     </UsersPageStyled>

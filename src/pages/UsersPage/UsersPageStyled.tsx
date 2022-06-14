@@ -21,11 +21,17 @@ const UsersPageStyled = styled.section`
     display: flex;
     justify-content: space-between;
 
-    p {
+    button {
       font-weight: bold;
+      background-color: #fff;
+      font-family: "Courier New", Courier, monospace;
+      margin: 20px 50px;
+      border-width: 0px;
+      padding: 0px;
+      text-decoration: underline;
     }
 
-    p:hover {
+    button:hover {
       cursor: pointer;
       text-decoration: underline;
     }

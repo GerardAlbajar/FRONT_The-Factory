@@ -38,7 +38,9 @@ const AssembleMutantPage = () => {
   const dispatch: AppDispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(loadUserCollectionThunk(id));
+    if (id) {
+      dispatch(loadUserCollectionThunk(id));
+    }
   }, [dispatch, id]);
 
   const formInitialState = { mutantName: "" };
