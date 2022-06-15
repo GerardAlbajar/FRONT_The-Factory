@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const TheFactoryPageStyled = styled.section`
-  padding: 50px;
+  padding: 50px 200px;
   background-color: #fff;
   .section1 {
     display: flex;
@@ -21,7 +21,7 @@ const TheFactoryPageStyled = styled.section`
   .section2 {
     text-align: left;
 
-    .adeu {
+    .img-container {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -50,7 +50,7 @@ const TheFactoryPageStyled = styled.section`
       p {
         margin: 50px 0;
       }
-      .adeu {
+      .img-container {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -98,6 +98,28 @@ const TheFactoryPageStyled = styled.section`
   button:hover {
     color: white;
     background-color: #000;
+  }
+
+  @media (max-width: 768px) {
+    padding: 50px;
+
+    .section1 {
+      display: flex;
+      flex-direction: column;
+
+      div {
+        margin: auto;
+        img {
+          width: 200px;
+          padding: 0 0 40px 0;
+        }
+      }
+
+      .hola {
+        text-align: left;
+        padding-bottom: 50px;
+      }
+    }
   }
 `;
 
