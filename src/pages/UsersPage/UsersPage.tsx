@@ -53,7 +53,7 @@ const UsersPage = () => {
         and a Perfect Astro NFT is minted. Our Astro Factory has enough
         inventory to assemble 1,000 Completed Rockets.
       </p>
-      <div>
+      <div className="buttons">
         <button onClick={previousPage} disabled={index < 1}>
           Previous User Collection
         </button>
