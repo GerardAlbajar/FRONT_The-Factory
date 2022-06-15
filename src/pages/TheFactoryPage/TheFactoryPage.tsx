@@ -28,7 +28,7 @@ const TheFactoryPage = (): JSX.Element => {
         <div>
           <img
             src="https://firebasestorage.googleapis.com/v0/b/astro-factory.appspot.com/o/REACT_NAUT.png?alt=media&token=b4ca79a2-7a99-4674-93d2-78a2bba4322f"
-            alt="hola"
+            alt="Astro Component"
           />
         </div>
       </section>
@@ -36,20 +36,20 @@ const TheFactoryPage = (): JSX.Element => {
       <section className="section2">
         <h2>ASSEMBLING YOUR ASTRO</h2>
 
-        <div className="adeu">
+        <div className="img-container">
           <img
             src="https://firebasestorage.googleapis.com/v0/b/astro-factory.appspot.com/o/JQUERY_ASTRO.png?alt=media&token=5314d5ea-94ef-41ae-8238-5e38879ffd08"
-            alt="hola"
+            alt="Astro Component"
           />
           <p>+</p>
           <img
             src="https://firebasestorage.googleapis.com/v0/b/astro-factory.appspot.com/o/ANGULAR_NAUT.png?alt=media&token=bea70d12-3e3f-4dcf-aac6-d5303d0bdb23"
-            alt="hola"
+            alt="Astro Component"
           />
           <p>+</p>
           <img
             src="https://firebasestorage.googleapis.com/v0/b/astro-factory.appspot.com/o/VUE_ROCKET.png?alt=media&token=e1c642db-2806-4d43-aa9e-c6b8c6a1e4f5"
-            alt="hola"
+            alt="Astro Component"
           />
         </div>
 
@@ -67,10 +67,10 @@ const TheFactoryPage = (): JSX.Element => {
           <h2>PERFECT ASTRO</h2>
           <p>
             A Perfect Astro is singular in its branding, composed of three
-            matching Component NFTs - total perfection.
+            matching Component NFTs.
           </p>
 
-          <div className="adeu">
+          <div className="img-container">
             <img
               src="https://firebasestorage.googleapis.com/v0/b/astro-factory.appspot.com/o/VUE_ASTRO.png?alt=media&token=7cef6c2a-6169-470c-80b7-10e2a2a948f8"
               alt="VUE ASTRO"
@@ -111,7 +111,7 @@ const TheFactoryPage = (): JSX.Element => {
             unmatching Component NFTs.
           </p>
 
-          <div className="adeu">
+          <div className="img-container">
             <img
               src="https://firebasestorage.googleapis.com/v0/b/astro-factory.appspot.com/o/JQUERY_ASTRO.png?alt=media&token=5314d5ea-94ef-41ae-8238-5e38879ffd08"
               alt="hola"
