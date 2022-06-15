@@ -17,7 +17,7 @@ const UsersPageStyled = styled.section`
     margin: 20px 50px;
   }
 
-  div {
+  .buttons {
     display: flex;
     justify-content: space-between;
 

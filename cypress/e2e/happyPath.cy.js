@@ -16,9 +16,9 @@ describe("Given the The Astro Factory webpage", () => {
       cy.get(`[class="top-nav"]`).contains("Explore").click();
 
       cy.get(`[class="main-list"]`).contains("gerard");
-      cy.get("p").contains("Next User Collection").click();
+      cy.get("button").contains("Next User Collection").click();
       cy.get(`[class="main-list"]`).contains("hola");
-      cy.get("p").contains("Previous User Collection").click();
+      cy.get("button").contains("Previous User Collection").click();
       cy.get(`[class="main-list"]`).contains("gerard");
 
       cy.get(`[class="top-nav"]`).contains("Your Collection").click();
@@ -64,26 +64,6 @@ describe("Given the The Astro Factory webpage", () => {
         .focused()
         .clear()
         .type("MUTANT EDITED FROM CYPRESS {enter}");
-
-      cy.get(`[class="top-nav"]`).contains("Astros").click();
-
-      cy.get("button").contains("VUE").click();
-
-      cy.get("ul").should("contain.text", "VUE ROCKET");
-      // cy.get("li").contains("VUE ROCKET").click();
-
-      // cy.visit(
-      //   "https://gerard-albajar-front-final-project-202204-bcn.netlify.app/details/astroparts/629e513c85d60f0e2f74ec42"
-      // );
-
-      // cy.get("button").contains("Add Item").click();
-
-      // cy.get(`[class="top-nav"]`).contains("Explore").click();
-      // cy.get(`[class="top-nav"]`).contains("The Factory").click();
-
-      // cy.get(`[class="top-nav"]`).contains("Your Collection").click();
-
-      // cy.get("ul").contains("VUE ROCKET").click(`[class="delete"]`);
     });
   });
 });
